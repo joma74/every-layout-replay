@@ -1,0 +1,25 @@
+{
+	"name": "wd-base-ws-one",
+	"version": "0.0.1",
+	"description": "Web Development Base Workspace One with Parcel and Tailwind CSS",
+	"main": "index.html",
+	"repository": "https://github.com/joma74/wd-base-ws-one.git",
+	"author": "joma74 <dev-mails@gmx.net>",
+	"license": "MIT",
+	"private": false,
+	"config": {
+		"PARCEL_PORT": "9500"
+	},
+	"scripts": {
+		"dev_start_parcel": "parcel --port $npm_package_config_PARCEL_PORT index.html",
+		"dev_start": "run-p dev_start_**",
+		"prod_build": "parcel build index.html"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9",
+		"npm-run-all": "^4.1.5",
+		"parcel": "^1.12.4",
+		"postcss": "^7",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat"
+	}
+}
