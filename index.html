@@ -3,28 +3,67 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>
-			Web Development Base Workspace One with Parcel and Tailwind CSS
-		</title>
+		<title>Every Layout - The Stack</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
 	<body>
-		<div
-			class="tw-min-h-screen tw-max-w-xl tw-m-4 tw-p-5 tw-bg-white tw-rounded tw-shadow-xl"
-		>
-			<h1 class="ownstyle-example">
-				Web Development Base Workspace One with Parcel and Tailwind CSS
-			</h1>
-			<p class="tw-text-warmGray-900 tw-bg-warmGray-100">warmGray-100</p>
-			<p class="tw-text-warmGray-800 tw-bg-warmGray-200">warmGray-200</p>
-			<p class="tw-text-warmGray-700 tw-bg-warmGray-300">warmGray-300</p>
-			<p class="tw-text-warmGray-600 tw-bg-warmGray-400">warmGray-400</p>
-			<p class="tw-text-white tw-bg-warmGray-500">warmGray-500</p>
-			<p class="tw-text-warmGray-400 tw-bg-warmGray-600">warmGray-600</p>
-			<p class="tw-text-warmGray-300 tw-bg-warmGray-700">warmGray-700</p>
-			<p class="tw-text-warmGray-200 tw-bg-warmGray-800">warmGray-800</p>
-			<p class="tw-text-warmGray-100 tw-bg-warmGray-900">warmGray-900</p>
+		<div class="tw-min-h-screen tw-w-f tw-p-8 tw-bg-white tw-flex tw-flex-col">
+			<div class="tw-flex-grow tw-h-full tw-bg-white tw-rounded tw-shadow-xl">
+				<div class="tw-stack-6">
+					<div>
+						<h2 class="tw-text-blue-500">Example One: Usage of tw-stack-6</h2>
+						<div class="tw-bg-white tw-stack-6 tw-border-2 tw-border-blue-500">
+							<a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
+								<div class="tw-flex tw-justify-between">
+									<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+										>I am the 1st Element of a Stack</span
+									>
+									<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+								</div>
+								<p class="tw-text-sm tw-text-gray-900">
+									My stacker parent did not advise me, because i am the 1st
+									element
+								</p>
+								<p class="tw-text-sm tw-text-gray-600">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+									tempus element...
+								</p>
+							</a>
+							<a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
+								<div class="tw-flex tw-justify-between">
+									<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+										>I am the 2nd Element of a Stack</span
+									>
+									<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+								</div>
+								<p class="tw-text-sm tw-text-gray-900">
+									My stacker parent did advise me, look at the Spacer above me
+								</p>
+								<p class="tw-text-sm tw-text-gray-600">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+									tempus element...
+								</p>
+							</a>
+							<a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
+								<div class="tw-flex tw-justify-between">
+									<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+										>I am the 3rd Element of a Stack</span
+									>
+									<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+								</div>
+								<p class="tw-text-sm tw-text-gray-900">
+									My stacker parent did advise me, look at the Spacer above me
+								</p>
+								<p class="tw-text-sm tw-text-gray-600">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+									tempus element...
+								</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
