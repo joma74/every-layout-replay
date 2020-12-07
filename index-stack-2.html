@@ -3,31 +3,67 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - The Stack - Example Two</title>
+		<title>Every Layout - The Stack - Example X</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
 	<body>
-		<div class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-byflex-grow-my">
-			<div class="tw-bg-white tw-rounded tw-shadow-xl tw-stack-byflex-grow-my">
-				<div class="tw-bg-blue-500 tw-stack-byflex-grow-my">
-					<div
-						label="Example Two"
-						class="tw-border-2 tw-border-blue-500 tw-stack-byflex-grow-my"
-					>
-						<div
-							class="tw-text-blue-500 tw-bg-white tw-stack-1 tw-stack-byflex-natural-me"
+		<div
+			class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-byflex-grow-my"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-bg-white tw-rounded tw-shadow-xl tw-stack-6 tw-stack-byflex-grow-my"
+				id="element-passepartout"
+			>
+				<div
+					class="tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-pl-2 tw-stack-1 tw-stack-byflex-natural-me"
+					id="description-example"
+				>
+					<h2 class="tw-font-bold">Example Two</h2>
+					<p>
+						Usage of css class tw-stack-byflex-grow-my on the
+						<a
+							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
+							href="#element-passepartout"
+							>element-passepartout</a
 						>
-							<h2 class="tw-mb-3">Example Two</h2>
-							<p>
-								Usage of tw-stack-byflex-grow-my for the stack container and
-								exception of tw-stack-byflex-natural-me for all description
-								stack elements.
-							</p>
-							<p>The stack's assigned space is colored for demonstration.</p>
-						</div>
-					</div>
+						and cascading to the
+						<a
+							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
+							href="#container-example"
+							>container-example</a
+						>
+						to make the
+						<a
+							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
+							href="#container-example"
+							>container-example</a
+						>
+						grow to the reminaing space.
+					</p>
+					<p>
+						Usage of the css class tw-stack-byflex-natural-me on the
+						<a
+							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
+							href="#description-example"
+							>description-example</a
+						>
+						as an exception override to tw-stack-byflex-grow-my coming from the
+						<a
+							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
+							href="#element-passepartout"
+							>element-passepartout</a
+						>.
+					</p>
+					<p class="tw-text-blueGray-400">
+						The stack's assigned space is colored for demonstration.
+					</p>
 				</div>
+				<div
+					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6"
+					id="container-example"
+				></div>
 			</div>
 		</div>
 	</body>
