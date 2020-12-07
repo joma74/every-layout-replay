@@ -45,31 +45,45 @@ module.exports = {
 			addComponents(stackComponents)
 		}),
 		/**
-		 * Stack Justify and Stack-Spring Plugin
+		 * Stack Justify At Start and Stack-Spring Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-stack-1 > * + * {
-		 *      margin-top: 1.25rem;
-		 *  }
+		 *  .tw-stack-justify-start {
+		 *    display: flex;
+		 *    flex-direction: column;
+		 *    justify-content: start;
+		 *    }
 		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 *
+		 * Plus
+		 * ```
+		 *    .tw-stack-justify-start.tw-stack-spring-after-1 > :nth-child(1) {
+		 *    margin-bottom: auto;
+		 *    }
+		 *    ... for 1..4
+		 * ```
+		 * for each value of 1..4
 		 *
 		 */
 		// @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
-			const stackSpringComponents = {
+			const stackSpringParent = {
 				".stack-justify-start": {
 					display: "flex",
 					"flex-direction": "column",
 					"justify-content": "start",
 				},
 			}
-			addComponents(stackSpringComponents)
+			const stackSpringElements = _.map([1, 2, 3, 4], (value) => {
+				return {
+					[`.${prefix(`stack-justify-start`)}.${prefix(
+						`${e(`stack-spring-after-${value}`)}`,
+					)} > :nth-child(${value})`]: {
+						"margin-bottom": "auto",
+					},
+				}
+			})
+			addComponents([stackSpringParent, ...stackSpringElements])
 		}),
 	],
 }
