@@ -125,7 +125,7 @@
 		@apply tw-border-blueGray-300 tw-border-2 tw-border-dashed;
 	}
 
-	*[id|="description-example"] > p:nth-last-of-type(0) {
+	*[id|="description-example"] > p:nth-last-of-type(1) {
 		@apply tw-text-blueGray-400;
 	}
 
