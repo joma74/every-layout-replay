@@ -25,61 +25,86 @@
 }
 
 @layer components {
-	/** Add this to the Stack Justify and Stack-Spring Plugin **/
-	.tw-stack-justify-start.tw-stack-spring-after-1 > :nth-child(1) {
-		margin-bottom: auto;
-	}
-
-	.tw-stack-justify-start.tw-stack-spring-after-2 > :nth-child(2) {
-		margin-bottom: auto;
-	}
-
-	.tw-stack-justify-start.tw-stack-spring-after-3 > :nth-child(3) {
-		margin-bottom: auto;
-	}
-
-	.tw-stack-justify-start.tw-stack-spring-after-4 > :nth-child(4) {
-		margin-bottom: auto;
-	}
-
-	/** Stack Expand To Parent Height **/
-	.tw-stack-flex {
+	/** 
+     * Stack By Flex START
+     * ******************
+     * Vsibility: PRIVATE 
+     *
+     * Stack container that let it's elements stack up.
+     * Additionally, as instrinsic to flex,
+     * the stacked element's _CAN_ grow to take the 
+     * same height as their stack container - see 
+     * .tw-stack-flex-grow-my
+     */
+	.ptw-stack-byflex {
 		display: flex;
 		flex-direction: column;
 	}
 
-	.tw-stack-flex-grow-my {
-		display: flex;
-		flex-direction: column;
+	/** 
+     * Stack container that let it's elements stack up  
+     * plus ...
+     **/
+	.tw-stack-byflex-grow-my {
+		@apply ptw-stack-byflex;
 	}
 
-	.tw-stack-flex-grow-my > * {
-		flex-shrink: 0;
-		flex-grow: 1;
+	/**
+     * ... advise them to grow to its's height.
+     **/
+	.tw-stack-byflex-grow-my > * {
+		@apply tw-stack-byflex-grow-me;
 	}
 
+	/** 
+     * Stack container that let it's elements stack up plus  
+     * advise them to expand to its's height.
+     **/
 	.tw-stack-flex-shrink-my {
-		display: flex;
-		flex-direction: column;
+		@apply ptw-stack-byflex;
 	}
 
+	/**
+     * ... advise them to shrink to its's height.
+     **/
 	.tw-stack-flex-shrink-my > * {
-		flex-shrink: 1;
-		flex-grow: 0;
+		@apply tw-stack-byflex-shrink-me;
 	}
 
-	.tw-stack-flex-natural-me {
+	/** 
+     * Exception classes have same specificity as the container
+     * classes. Hence the exception classes MUST be listed in 
+     * the stylesheet AFTER the container classes
+     **/
+
+	/**
+     * Exception class for a stack container's element.
+     * Enables the intrinsic, "natural" sizing of it's element.
+     */
+	.tw-stack-byflex-natural-me {
 		flex-shrink: 0;
 		flex-grow: 0;
 	}
 
-	.tw-stack-flex-grow-me {
-		flex-shrink: 0;
-		flex-grow: 1;
+	/**
+     * Exception class for a stack container's element.
+     * Enables growing-only of it's element. 
+     */
+	.tw-stack-byflex-grow-me {
+		flex-shrink: 0 !important;
+		flex-grow: 1 !important;
 	}
 
-	.tw-stack-flex-shrink-me {
-		flex-shrink: 1;
-		flex-grow: 0;
+	/**
+     * Exception class for a stack container's element.
+     * Enables shrinking-only of it's element. 
+     */
+	.tw-stack-byflex-shrink-me {
+		flex-shrink: 1 !important;
+		flex-grow: 0 !important;
 	}
+
+	/** 
+     * Stack By Flex END
+     **/
 }
