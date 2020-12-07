@@ -121,7 +121,11 @@
 		@apply tw-font-bold;
 	}
 
-	*[id|="description-example"] > p:nth-of-type(2) {
+	*[id|="description-example"] > p > a {
+		@apply tw-border-blueGray-300 tw-border-2 tw-border-dashed;
+	}
+
+	*[id|="description-example"] > p:nth-last-of-type(0) {
 		@apply tw-text-blueGray-400;
 	}
 
