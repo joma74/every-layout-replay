@@ -8,66 +8,79 @@
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
 	<body>
-		<div class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-flex-grow-my">
-			<div class="tw-bg-white tw-rounded tw-shadow-xl tw-stack-flex-grow-my">
-				<div class="tw-stack-6 tw-stack-flex-grow-my">
-					<div
-						label="Example One"
-						class="tw-border-2 tw-border-blue-500 tw-stack-flex-natural-me"
-					>
-						<h2 class="tw-text-blue-500">
-							Example One: Usage of tw-stack-6. The stack's assigned space to
-							each element is colored for demonstration.
-						</h2>
-						<div class="tw-bg-blue-500 tw-stack-6">
-							<a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
-								<div class="tw-flex tw-justify-between">
-									<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
-										>I am the 1st Element of a Stack</span
-									>
-									<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
-								</div>
-								<p class="tw-text-sm tw-text-gray-900">
-									My stacker parent did not advise me, because i am the 1st
-									element
-								</p>
-								<p class="tw-text-sm tw-text-gray-600">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-									tempus element...
-								</p>
-							</a>
-							<a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
-								<div class="tw-flex tw-justify-between">
-									<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
-										>I am the 2nd Element of a Stack</span
-									>
-									<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
-								</div>
-								<p class="tw-text-sm tw-text-gray-900">
-									My stacker parent did advise me, look at the Spacer above me
-								</p>
-								<p class="tw-text-sm tw-text-gray-600">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-									tempus element...
-								</p>
-							</a>
-							<a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
-								<div class="tw-flex tw-justify-between">
-									<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
-										>I am the 3rd Element of a Stack</span
-									>
-									<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
-								</div>
-								<p class="tw-text-sm tw-text-gray-900">
-									My stacker parent did advise me, look at the Spacer above me
-								</p>
-								<p class="tw-text-sm tw-text-gray-600">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-									tempus element...
-								</p>
-							</a>
-						</div>
-					</div>
+		<div
+			class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-flex-grow-my"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-bg-white tw-rounded tw-shadow-xl tw-stack-6 tw-stack-flex-grow-my"
+				id="element-passepartout"
+			>
+				<div id="description-example">
+					<h2>Example One</h2>
+					<p>
+						Usage of css class tw-stack-6 on the
+						<a href="#element-passepartout">element-passepartout</a>
+						and cascading to the
+						<a href="#container-example">container-example</a>
+						to make the
+						<a href="#container-example">container-example</a>
+						grow to the reminaing height.
+					</p>
+					<p class="tw-text-blueGray-400">
+						The stack's assigned space is colored for demonstration.
+					</p>
+				</div>
+				<div
+					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6"
+					id="container-example"
+        >
+        <a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
+          <div class="tw-flex tw-justify-between">
+            <span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+              >I am the 1st Element of a Stack</span
+            >
+            <span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+          </div>
+          <p class="tw-text-sm tw-text-gray-900">
+            My stacker parent did not advise me, because i am the 1st element
+          </p>
+          <p class="tw-text-sm tw-text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            tempus element...
+          </p>
+        </a>
+        <a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
+          <div class="tw-flex tw-justify-between">
+            <span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+              >I am the 2nd Element of a Stack</span
+            >
+            <span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+          </div>
+          <p class="tw-text-sm tw-text-gray-900">
+            My stacker parent did advise me, look at the Spacer above me
+          </p>
+          <p class="tw-text-sm tw-text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            tempus element...
+          </p>
+        </a>
+        <a href="#" class="tw-block tw-px-6 tw-bg-blueGray-100">
+          <div class="tw-flex tw-justify-between">
+            <span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+              >I am the 3rd Element of a Stack</span
+            >
+            <span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+          </div>
+          <p class="tw-text-sm tw-text-gray-900">
+            My stacker parent did advise me, look at the Spacer above me
+          </p>
+          <p class="tw-text-sm tw-text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            tempus element...
+          </p>
+        </a>
+      </div>
 				</div>
 			</div>
 		</div>
