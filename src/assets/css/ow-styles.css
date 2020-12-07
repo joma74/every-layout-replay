@@ -5,3 +5,7 @@
 .ow-display-tcell {
 	display: table-cell;
 }
+
+:target {
+	background: yellow;
+}
