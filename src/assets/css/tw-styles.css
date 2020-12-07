@@ -13,12 +13,12 @@
 		height: inherit;
 	}
 
-	/*  - Compensate width of element for scrollbar -
+	/**  - Compensate width of element for scrollbar -
     *   so it does not hide behind the scrollbar 
     *   plus hence does not activate the x-scrollbar.
     *
     *   See https://codepen.io/shshaw/pen/JqGmKx
-    */
+    **/
 	.tw-w-full-cmpn-scrlb {
 		width: calc(100% - var(--scrollbar-width)) !important;
 	}
@@ -106,5 +106,26 @@
 
 	/** 
      * Stack By Flex END
+     **/
+
+	/**
+      * OW Styles START
+      * (should be in ow-styles.css, but tech issue)
+      **/
+
+	#description-example {
+		@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-pl-2 tw-stack-1 tw-stack-byflex-natural-me;
+	}
+
+	*[id|="description-example"] > h2 {
+		@apply tw-font-bold;
+	}
+
+	*[id|="description-example"] > p:nth-of-type(2) {
+		@apply tw-text-blueGray-400;
+	}
+
+	/** 
+     * OW Styles END
      **/
 }
