@@ -3,3 +3,83 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--scrollbar-width: calc(100vw - 100%);
+	}
+
+	.tw-h-inherit {
+		height: inherit;
+	}
+
+	/*  - Compensate width of element for scrollbar -
+    *   so it does not hide behind the scrollbar 
+    *   plus hence does not activate the x-scrollbar.
+    *
+    *   See https://codepen.io/shshaw/pen/JqGmKx
+    */
+	.tw-w-full-cmpn-scrlb {
+		width: calc(100% - var(--scrollbar-width)) !important;
+	}
+}
+
+@layer components {
+	/** Add this to the Stack Justify and Stack-Spring Plugin **/
+	.tw-stack-justify-start.tw-stack-spring-after-1 > :nth-child(1) {
+		margin-bottom: auto;
+	}
+
+	.tw-stack-justify-start.tw-stack-spring-after-2 > :nth-child(2) {
+		margin-bottom: auto;
+	}
+
+	.tw-stack-justify-start.tw-stack-spring-after-3 > :nth-child(3) {
+		margin-bottom: auto;
+	}
+
+	.tw-stack-justify-start.tw-stack-spring-after-4 > :nth-child(4) {
+		margin-bottom: auto;
+	}
+
+	/** Stack Expand To Parent Height **/
+	.tw-stack-flex {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tw-stack-flex-grow-my {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tw-stack-flex-grow-my > * {
+		flex-shrink: 0;
+		flex-grow: 1;
+	}
+
+	.tw-stack-flex-shrink-my {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tw-stack-flex-shrink-my > * {
+		flex-shrink: 1;
+		flex-grow: 0;
+	}
+
+	.tw-stack-flex-natural-me {
+		flex-shrink: 0;
+		flex-grow: 0;
+	}
+
+	.tw-stack-flex-grow-me {
+		flex-shrink: 0;
+		flex-grow: 1;
+	}
+
+	.tw-stack-flex-shrink-me {
+		flex-shrink: 1;
+		flex-grow: 0;
+	}
+}

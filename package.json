@@ -11,7 +11,7 @@
 		"PARCEL_PORT": "9500"
 	},
 	"scripts": {
-		"dev_start_parcel": "parcel --port $npm_package_config_PARCEL_PORT index.html",
+		"dev_start_parcel": "parcel --no-source-maps --no-cache --port $npm_package_config_PARCEL_PORT index.html",
 		"dev_start": "run-p dev_start_**",
 		"prod_build": "parcel build index.html"
 	},

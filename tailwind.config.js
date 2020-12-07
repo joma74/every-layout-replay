@@ -35,14 +35,41 @@ module.exports = {
 		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
 		 */ // @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
-			const stackBase = _.map(config("theme.spacing"), (value, key) => {
+			const stackComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
 					[`.${prefix(`${e(`stack-${key}`)}`)} > * + *`]: {
 						"margin-top": `${value}`,
 					},
 				}
 			})
-			addComponents(stackBase)
+			addComponents(stackComponents)
+		}),
+		/**
+		 * Stack Justify and Stack-Spring Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-stack-1 > * + * {
+		 *      margin-top: 1.25rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 *
+		 *
+		 */
+		// @ts-ignore
+		plugin(function ({ addComponents, e, prefix, config }) {
+			const stackSpringComponents = {
+				".stack-justify-start": {
+					display: "flex",
+					"flex-direction": "column",
+					"justify-content": "start",
+				},
+			}
+			addComponents(stackSpringComponents)
 		}),
 	],
 }

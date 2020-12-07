@@ -1,3 +1,7 @@
-.ownstyle-example {
-	border: 2px solid blueviolet;
+.ow-display-table {
+	display: table;
+}
+
+.ow-display-tcell {
+	display: table-cell;
 }
