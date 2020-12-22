@@ -129,6 +129,10 @@
 		@apply tw-text-blueGray-400;
 	}
 
+	.ow-keyword {
+		@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1;
+	}
+
 	/** 
      * OW Styles END
      **/
