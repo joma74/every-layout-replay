@@ -10,7 +10,7 @@
 	background: yellow;
 }
 
-.ow-keyword {
+.ow-emphasis {
 	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1;
 }
 
@@ -18,29 +18,52 @@
 	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono;
 }
 
-.ow-button {
-	@apply tw-inline-block tw-text-blue-500 tw-rounded-full tw-text-xs hover:tw-bg-blue-500 hover:tw-text-white  tw-border-blueGray-300 tw-border-2 tw-border-dashed;
-}
-
 *[id|="description-example"] > h2 {
 	@apply tw-font-bold;
 }
 
-*[id|="description-example"] a {
-	@apply tw-border-blueGray-300 tw-border-2 tw-px-1 tw-border-dashed;
-}
-
+/**
+ * External Link hinted by an "external link" image displayed 
+ * at the end of an element
+ */
 *[id|="description-example"] a[href^="http"] {
 	@apply tw-pr-3;
 	background: url(/src/assets/img/external-link--v1.png) no-repeat right top;
 	background-size: 0.75rem 0.75rem;
 }
 
-*[id|="description-example"] a[href="#reset"] {
+/**
+ * A simple Link
+ */
+*[id|="description-example"] a {
+	@apply tw-border-blueGray-300 tw-border-2 tw-px-1 tw-border-dashed;
+}
+
+/**
+ * LINK_WITH_PILL
+ * START
+ *
+ * A Link with a button pill on the right top side of it 
+ *
+ * Example code:
+ * <span class="link-with-pill"
+ *  ><a href="#container-example">container-example</a
+ *	><a href="#reset" style="right: -3ch">Reset</a>
+ * </span> 
+ **/
+*[id|="description-example"] span.link-with-pill {
+	@apply tw-inline-block tw-relative;
+}
+
+/* The right position of this element MUST be adjusted to the content, so not given. Example is style="right: -3ch" */
+*[id|="description-example"] .link-with-pill a:nth-of-type(2) {
 	@apply tw-absolute tw-inline-block tw-text-blue-500 tw-rounded-full tw-text-xs hover:tw-bg-blue-500 hover:tw-text-white  tw-border-blueGray-300 tw-border-2 tw-border-dashed;
 	top: -50%;
-	right: -3ch;
 }
+/**
+ * LINK_WITH_PILL
+ * END
+ **/
 
 *[id|="description-example"] > p:nth-last-of-type(1) {
 	@apply tw-text-blueGray-400;
