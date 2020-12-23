@@ -7,7 +7,7 @@
 }
 
 :target {
-	background: yellow;
+	@apply tw-bg-yellow-200;
 }
 
 .ow-emphasis {
@@ -15,7 +15,11 @@
 }
 
 .ow-code {
-	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono;
+	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono tw-text-sm;
+}
+
+*[id|="description-example"] {
+	@apply tw-p-2;
 }
 
 *[id|="description-example"] > h2 {
@@ -52,7 +56,7 @@
  * </span> 
  **/
 *[id|="description-example"] span.link-with-pill {
-	@apply tw-inline-block tw-relative;
+	@apply tw-inline-block tw-relative hover:tw-bg-yellow-200;
 }
 
 /* The right position of this element MUST be adjusted to the content, so not given. Example is style="right: -3ch" */
@@ -67,15 +71,4 @@
 
 *[id|="description-example"] > p:nth-last-of-type(1) {
 	@apply tw-text-blueGray-400;
-}
-
-/**
- * Overwrite of prism.js code highlighter's
- * color used for css classes.
- */
-.token.atrule,
-.token.attr-value,
-.token.class-name,
-.token.keyword {
-	@apply tw-text-blue-500;
 }
