@@ -105,54 +105,10 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			/**
-			 * All links that have a local(#) target SHOULD NOT add their action to the browser's history
-			 */
-			document.querySelectorAll("a[href^='#']").forEach((elm) => {
-				elm.addEventListener("click", (evt) => {
-					history.replaceState({}, "", evt.toElement.href)
-				})
-			})
-		</script>
+		<script src="src/assets/js/targetnohistory.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
-		<script>
-			Prism = Prism || {}
-			Prism.manual = true
-			const codeExampleDom = document
-				.getElementById("container-example")
-				.cloneNode(true)
-			const notCodingExampleElements = document.createNodeIterator(
-				codeExampleDom,
-				NodeFilter.SHOW_ALL,
-				(/** @type {Node} */ elm) => {
-					if (elm.nodeType == 3 || !elm.hasAttribute("for-code-example"))
-						return NodeFilter.FILTER_ACCEPT
-					else return NodeFilter.FILTER_SKIP
-				},
-			)
-			/** @type {Node} */
-			let notCodingExampleElement = null
-			while (
-				(notCodingExampleElement = notCodingExampleElements.nextNode()) != null
-			) {
-				notCodingExampleElement.parentElement.removeChild(
-					notCodingExampleElement,
-				)
-			}
-			let codeExample = codeExampleDom.outerHTML
-			codeExample = html_beautify(codeExample, {
-				inline: [],
-			})
-			const highlightedCodeExample = Prism.highlight(
-				codeExample,
-				Prism.languages.html,
-			)
-			document.getElementById(
-				"code-example",
-			).innerHTML = `<pre class="language-markup">${highlightedCodeExample}</pre>`
-		</script>
+		<script src="src/assets/js/codeexamplif.js"></script>
 	</body>
 </html>
