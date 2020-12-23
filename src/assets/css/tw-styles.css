@@ -117,22 +117,6 @@
 		@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-pl-2 tw-stack-2 tw-stack-byflex-natural-me;
 	}
 
-	*[id|="description-example"] > h2 {
-		@apply tw-font-bold;
-	}
-
-	*[id|="description-example"] > p > a {
-		@apply tw-border-blueGray-300 tw-border-2 tw-border-dashed;
-	}
-
-	*[id|="description-example"] > p:nth-last-of-type(1) {
-		@apply tw-text-blueGray-400;
-	}
-
-	.ow-keyword {
-		@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1;
-	}
-
 	/** 
      * OW Styles END
      **/

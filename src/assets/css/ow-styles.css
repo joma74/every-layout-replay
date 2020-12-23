@@ -9,3 +9,50 @@
 :target {
 	background: yellow;
 }
+
+.ow-keyword {
+	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1;
+}
+
+.ow-code {
+	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono;
+}
+
+.ow-button {
+	@apply tw-inline-block tw-text-blue-500 tw-rounded-full tw-text-xs hover:tw-bg-blue-500 hover:tw-text-white  tw-border-blueGray-300 tw-border-2 tw-border-dashed;
+}
+
+*[id|="description-example"] > h2 {
+	@apply tw-font-bold;
+}
+
+*[id|="description-example"] a {
+	@apply tw-border-blueGray-300 tw-border-2 tw-px-1 tw-border-dashed;
+}
+
+*[id|="description-example"] a[href^="http"] {
+	@apply tw-pr-3;
+	background: url(/src/assets/img/external-link--v1.png) no-repeat right top;
+	background-size: 0.75rem 0.75rem;
+}
+
+*[id|="description-example"] a[href="#reset"] {
+	@apply tw-absolute tw-inline-block tw-text-blue-500 tw-rounded-full tw-text-xs hover:tw-bg-blue-500 hover:tw-text-white  tw-border-blueGray-300 tw-border-2 tw-border-dashed;
+	top: -50%;
+	right: -3ch;
+}
+
+*[id|="description-example"] > p:nth-last-of-type(1) {
+	@apply tw-text-blueGray-400;
+}
+
+/**
+ * Overwrite of prism.js code highlighter's
+ * color used for css classes.
+ */
+.token.atrule,
+.token.attr-value,
+.token.class-name,
+.token.keyword {
+	@apply tw-text-blue-500;
+}
