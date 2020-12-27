@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - The Stack - Example 2</title>
+		<title>Every Layout - The Stack, Grow My and Natural Me</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
 	<body>
 		<div
 			class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-byflex-grow-my"
@@ -17,40 +18,105 @@
 				id="element-passepartout"
 			>
 				<div id="description-example">
-					<h2><a href="#reset">Example Two</a></h2>
+					<h2>Every Layout - The Stack, Grow My and Natural Me</h2>
 					<p>
-						Usage of css class tw-stack-byflex-grow-my on the
-						<a href="#element-passepartout">element-passepartout</a>
-						and cascading to the
-						<a href="#container-example">container-example</a>
-						to make the
-						<a href="#container-example">container-example</a>
-						grow to the reminaing height.
+						Usage of css class
+						<span class="ow-code">tw-stack-byflex-grow-my</span> on the
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, cascading by default to all children which do not exempt me - like
+						the
+						<span class="link-with-pill"
+							><a href="#grow-me-element-1">grow-me-element 1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#grow-me-element-2">grow-me-element 2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						- to make them grow to the reminaing height.
 					</p>
 					<p>
-						Usage of the css class tw-stack-byflex-natural-me on the
-						<a
-							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
-							href="#description-example"
-							>description-example</a
-						>
-						as an exception override to tw-stack-byflex-grow-my coming from the
-						<a
-							class="tw-border-blueGray-300 tw-border-2 tw-border-dashed"
-							href="#element-passepartout"
-							>element-passepartout</a
-						>.
+						Usage of the css class
+						<span class="ow-code">tw-stack-byflex-natural-me</span> on the
+						<span class="link-with-pill"
+							><a href="#natural-me-element-1">natural-me-element 1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#natural-me-element-2">natural-me-element 2</a
+							><a href="#reset" style="right: -3ch">Reset</a> </span
+						>, as an exception override to
+						<span class="ow-code">tw-stack-byflex-grow-my</span>, coming from
+						the
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						. The exception override reacts opposite, in that it will only
+						consume its's intrinsic, natural space.
 					</p>
+					<div id="code-example">
+						This element will be replaced by any element iff a root element of
+						id <span class="ow-code">usage-example</span> exists and having an
+						attribute of <span class="ow-code">for-code-example</span>. Then any
+						node having an attribute of
+						<span class="ow-code">for-code-example</span> is selected, formatted
+						and highlighted here.
+					</div>
 					<p class="tw-text-blueGray-400">
 						The stack's assigned space is
-						<span class="ow-keyword">colored</span> for demonstration.
+						<span class="ow-emphasis">colored</span> for demonstration.
 					</p>
 				</div>
 				<div
-					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6"
-					id="container-example"
-				></div>
+					id="usage-example"
+					class="tw-stack-byflex-grow-my tw-bg-blue-500"
+					for-code-example
+				>
+					<div
+						id="natural-me-element-1"
+						class="tw-stack-byflex-natural-me tw-border-2 tw-border-pink-400"
+						for-code-example
+					>
+						I am the 'natural-me-element' 1. I defined me as an exception to my
+						parent. I am lazy to grow. More natural guy.
+					</div>
+					<div
+						id="grow-me-element-1"
+						class="tw-border-2 tw-border-pink-400"
+						for-code-example
+					>
+						I am the 'grow-me-element' 1. I am eager to grow as my parent told
+						me and have space for me. ....
+					</div>
+					<div
+						id="grow-me-element-2"
+						class="tw-border-2 tw-border-pink-400"
+						for-code-example
+					>
+						I am the 'grow-me-element' 2. I am eager to grow as my parent told
+						me and have space for me. ....
+					</div>
+					<div
+						id="natural-me-element-2"
+						class="tw-stack-byflex-natural-me tw-border-2 tw-border-pink-400"
+						for-code-example
+					>
+						I am the 'natural-me-element' 2. I defined me as an exception to my
+						parent. I am lazy to grow. More natural guy.
+					</div>
+				</div>
 			</div>
 		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
 	</body>
 </html>
