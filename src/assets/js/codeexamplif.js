@@ -1,8 +1,6 @@
 Prism = Prism || {}
 Prism.manual = true
-const codeExampleDom = document
-	.getElementById("container-example")
-	.cloneNode(true)
+const codeExampleDom = document.getElementById("usage-example").cloneNode(true)
 const notCodingExampleElements = document.createNodeIterator(
 	codeExampleDom,
 	NodeFilter.SHOW_ALL,
