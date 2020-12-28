@@ -3,6 +3,6 @@
  */
 document.querySelectorAll("a[href^='#']").forEach((elm) => {
 	elm.addEventListener("click", (evt) => {
-		history.replaceState({}, "", evt.toElement.href)
+		history.replaceState({}, "", evt.target.href)
 	})
 })
