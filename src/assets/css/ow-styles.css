@@ -72,3 +72,7 @@
 *[id|="description-example"] > p:nth-last-of-type(1) {
 	@apply tw-text-blueGray-400;
 }
+
+*[id|="code-example"] {
+	@apply tw-overflow-auto;
+}
