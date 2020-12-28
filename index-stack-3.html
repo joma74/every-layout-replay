@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - The Stack - Example Three</title>
+		<title>Every Layout - The Stack, Pull Up And Spring After</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
 	<body>
 		<div
 			class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-byflex-grow-my"
@@ -18,46 +19,60 @@
 			>
 				<div id="description-example">
 					<h2>
-						<h2><a href="#reset">Example Three</a></h2>
+						<h2>
+							<a href="#reset"
+								>Every Layout - The Stack, Pull Up And Spring After</a
+							>
+						</h2>
 					</h2>
 					<p>
-						Usage of css class tw-stack-2 on the
-						<a href="#container-element-1">container-element-1</a>,
-						<a href="#container-element-2">container-element-2</a> and
-						<a href="#container-element-3">container-element-3</a> cascading the
-						spacing between the stack's elements in a vertical rhythm based on
-						the
-						<a
-							href="https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale"
-							target="_blank"
-							>Tailwind CSS spacing scale</a
-						>
-						No. 2 (2 * 0,25rem = 0,5rem).
+						Usage of css class
+						<span class="ow-code">tw-stack-pull-up</span> on the
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						to soak every element up. But the additional css class
+						<span class="ow-code">tw-stack-springafter-2</span> on the same
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						advises the margin after the
+						<span class="link-with-pill"
+							><a href="#stack-element-2">stack-element-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						to act like a spring, pushing the
+						<span class="link-with-pill"
+							><a href="#stack-element-3">stack-element-3</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						down to the bottom.
 					</p>
-					<p>
-						Usage of css class tw-stack-justify-start on the
-						<a href="#container-example">container-example</a> to soak every
-						element up, but css class tw-stack-springafter-2 on the same
-						<a href="#container-example">container-example</a> advises the
-						margin after the
-						<a href="#container-element-2">container-element-2</a> to act like a
-						spring, pushing the
-						<a href="#container-element-3">container-element-3</a> down to the
-						bottom.
-					</p>
+					<div id="code-example" class="tw-overflow-auto">
+						This element will be replaced by any element iff a root element of
+						id <span class="ow-code">usage-example</span> exists and having an
+						attribute of <span class="ow-code">for-code-example</span>. Then any
+						node having an attribute of
+						<span class="ow-code">for-code-example</span> is selected, formatted
+						and highlighted here.
+					</div>
 					<p>
 						The stack's assigned space is
-						<span class="ow-keyword">colored</span> for demonstration.
+						<span class="ow-emphasis">colored</span> for demonstration.
 					</p>
 				</div>
 				<div
-					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6 tw-stack-justify-start tw-stack-spring-after-2"
-					id="container-example"
+					id="usage-example"
+					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6 tw-stack-pull-up tw-stack-spring-after-2"
+					for-code-example
 				>
 					<a
 						href="#"
 						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
-						id="container-element-1"
+						id="stack-element-1"
+						for-code-example
 					>
 						<div class="tw-flex tw-justify-between">
 							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
@@ -76,7 +91,8 @@
 					<a
 						href="#"
 						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
-						id="container-element-2"
+						id="stack-element-2"
+						for-code-example
 					>
 						<div class="tw-flex tw-justify-between">
 							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
@@ -95,7 +111,8 @@
 					<a
 						href="#"
 						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
-						id="container-element-3"
+						id="stack-element-3"
+						for-code-example
 					>
 						<div class="tw-flex tw-justify-between">
 							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
@@ -114,5 +131,10 @@
 				</div>
 			</div>
 		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
 	</body>
 </html>

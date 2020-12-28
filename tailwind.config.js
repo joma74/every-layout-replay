@@ -49,7 +49,7 @@ module.exports = {
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-stack-justify-start {
+		 *  .tw-stack-pull-up {
 		 *    display: flex;
 		 *    flex-direction: column;
 		 *    justify-content: start;
@@ -57,7 +57,7 @@ module.exports = {
 		 * ```
 		 * Plus
 		 * ```
-		 *    .tw-stack-justify-start.tw-stack-spring-after-1 > :nth-child(1) {
+		 *    .tw-stack-pull-up.tw-stack-spring-after-1 > :nth-child(1) {
 		 *    margin-bottom: auto;
 		 *    }
 		 *    ... for 1..4
@@ -68,7 +68,7 @@ module.exports = {
 		// @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
 			const stackSpringParent = {
-				".stack-justify-start": {
+				".stack-pull-up": {
 					display: "flex",
 					"flex-direction": "column",
 					"justify-content": "start",
@@ -76,7 +76,7 @@ module.exports = {
 			}
 			const stackSpringElements = _.map([1, 2, 3, 4], (value) => {
 				return {
-					[`.${prefix(`stack-justify-start`)}.${prefix(
+					[`.${prefix(`stack-pull-up`)}.${prefix(
 						`${e(`stack-spring-after-${value}`)}`,
 					)} > :nth-child(${value})`]: {
 						"margin-bottom": "auto",
