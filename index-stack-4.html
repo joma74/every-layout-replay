@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Every Layout - The Stack, Byflex Pull Up And Spring After</title>
+	</head>
+	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
+	<body>
+		<div
+			class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-byflex-grow-my"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-bg-white tw-rounded tw-shadow-xl tw-stack-6 tw-stack-byflex-grow-my"
+				id="element-passepartout"
+			>
+				<div id="description-example">
+					<h2>Every Layout - The Stack, Byflex Pull Up And Spring After</h2>
+					<p>
+						Usage of css class
+						<span class="ow-code">tw-stack-byflex-pull-up</span> on the
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						to soak every element up. But the additional css class
+						<span class="ow-code">tw-stack-byflex-spring-after-2</span> on the
+						same
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						advises the margin after the
+						<span class="link-with-pill"
+							><a href="#stack-element-2">stack-element-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						to act like a spring, pushing the
+						<span class="link-with-pill"
+							><a href="#stack-element-3">stack-element-3</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						down to the bottom.
+					</p>
+					<div id="code-example">
+						This element will be replaced by any element iff a root element of
+						id <span class="ow-code">usage-example</span> exists and having an
+						attribute of <span class="ow-code">for-code-example</span>. Then any
+						node having an attribute of
+						<span class="ow-code">for-code-example</span> is selected, formatted
+						and highlighted here.
+					</div>
+					<p>
+						The stack's assigned space is
+						<span class="ow-emphasis">colored</span> for demonstration.
+					</p>
+				</div>
+				<div
+					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6 tw-stack-byflex-pull-up tw-stack-byflex-spring-after-2"
+					id="usage-example"
+					for-code-example
+				>
+					<a
+						href="#"
+						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
+						id="stack-element-1"
+						for-code-example
+					>
+						<div class="tw-flex tw-justify-between">
+							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+								>I am the 1st Element of a Stack</span
+							>
+							<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+						</div>
+						<p class="tw-text-sm tw-text-gray-900">
+							My stacker parent did not advise me, because i am the 1st element
+						</p>
+						<p class="tw-text-sm tw-text-gray-600">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+							tempus element...
+						</p>
+					</a>
+					<a
+						href="#"
+						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
+						id="stack-element-2"
+						for-code-example
+					>
+						<div class="tw-flex tw-justify-between">
+							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+								>I am the 2nd Element of a Stack</span
+							>
+							<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+						</div>
+						<p class="tw-text-sm tw-text-gray-900">
+							My stacker parent did advise me, look at the Spacer above me
+						</p>
+						<p class="tw-text-sm tw-text-gray-600">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+							tempus element...
+						</p>
+					</a>
+					<a
+						href="#"
+						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
+						id="stack-element-3"
+						for-code-example
+					>
+						<div class="tw-flex tw-justify-between">
+							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
+								>I am the 3rd Element of a Stack</span
+							>
+							<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
+						</div>
+						<p class="tw-text-sm tw-text-gray-900">
+							My stacker parent did advise me, look at the Spacer above me
+						</p>
+						<p class="tw-text-sm tw-text-gray-600">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+							tempus element...
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
+	</body>
+</html>

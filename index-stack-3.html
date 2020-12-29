@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - The Stack, Byflex Pull Up And Spring After</title>
+		<title>Every Layout - The Stack, Shrink My and Grow Me</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
@@ -18,32 +18,47 @@
 				id="element-passepartout"
 			>
 				<div id="description-example">
-					<h2>Every Layout - The Stack, Byflex Pull Up And Spring After</h2>
+					<h2>Every Layout - The Stack, Shrink My and Grow Me</h2>
 					<p>
 						Usage of css class
-						<span class="ow-code">tw-stack-byflex-pull-up</span> on the
+						<span class="ow-code">tw-stack-byflex-shrink-my</span> on the
 						<span class="link-with-pill"
 							><a href="#usage-example">usage-example</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
-						to soak every element up. But the additional css class
-						<span class="ow-code">tw-stack-byflex-spring-after-2</span> on the
-						same
+						, cascading by default to all children which do not exempt - like
+						the
+						<span class="link-with-pill"
+							><a href="#shrink-me-element-1">shrink-me-element 1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#shrink-me-element-2">shrink-me-element 2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						- to make them shrink to the remaining height.
+					</p>
+					<p>
+						Usage of the css class
+						<span class="ow-code">tw-stack-byflex-grow-me</span> on the
+						<span class="link-with-pill"
+							><a href="#grow-me-element-1">grow-me-element 1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#grow-me-element-2">grow-me-element 2</a
+							><a href="#reset" style="right: -3ch">Reset</a> </span
+						>, as an exempt override to
+						<span class="ow-code">tw-stack-byflex-grow-my</span>, coming from
+						the
 						<span class="link-with-pill"
 							><a href="#usage-example">usage-example</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
-						advises the margin after the
-						<span class="link-with-pill"
-							><a href="#stack-element-2">stack-element-2</a
-							><a href="#reset" style="right: -3ch">Reset</a>
-						</span>
-						to act like a spring, pushing the
-						<span class="link-with-pill"
-							><a href="#stack-element-3">stack-element-3</a
-							><a href="#reset" style="right: -3ch">Reset</a>
-						</span>
-						down to the bottom.
+						. The exempt override reacts opposite, in that it will consume as
+						much space as is left.
 					</p>
 					<div id="code-example">
 						This element will be replaced by any element iff a root element of
@@ -53,76 +68,48 @@
 						<span class="ow-code">for-code-example</span> is selected, formatted
 						and highlighted here.
 					</div>
-					<p>
+					<p class="tw-text-blueGray-400">
 						The stack's assigned space is
 						<span class="ow-emphasis">colored</span> for demonstration.
 					</p>
 				</div>
 				<div
-					class="tw-bg-blue-500 tw-border-2 tw-border-blue-500 tw-stack-6 tw-stack-byflex-pull-up tw-stack-byflex-spring-after-2"
+					class="tw-stack-byflex-shrink-my tw-bg-blue-500"
 					id="usage-example"
 					for-code-example
 				>
-					<a
-						href="#"
-						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
-						id="stack-element-1"
+					<div
+						class="tw-stack-byflex-grow-me tw-border-2 tw-border-pink-400"
+						id="grow-me-element-1"
 						for-code-example
 					>
-						<div class="tw-flex tw-justify-between">
-							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
-								>I am the 1st Element of a Stack</span
-							>
-							<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
-						</div>
-						<p class="tw-text-sm tw-text-gray-900">
-							My stacker parent did not advise me, because i am the 1st element
-						</p>
-						<p class="tw-text-sm tw-text-gray-600">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-							tempus element...
-						</p>
-					</a>
-					<a
-						href="#"
-						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
-						id="stack-element-2"
+						I am the 'grow-me-element-1'. I defined me as an exemption to my
+						parent. I am eager to grow. More of an all-i-can-get guy.
+					</div>
+					<div
+						class="tw-border-2 tw-border-pink-400"
+						id="shrink-me-element-1"
 						for-code-example
 					>
-						<div class="tw-flex tw-justify-between">
-							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
-								>I am the 2nd Element of a Stack</span
-							>
-							<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
-						</div>
-						<p class="tw-text-sm tw-text-gray-900">
-							My stacker parent did advise me, look at the Spacer above me
-						</p>
-						<p class="tw-text-sm tw-text-gray-600">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-							tempus element...
-						</p>
-					</a>
-					<a
-						href="#"
-						class="tw-block tw-px-6 tw-stack-2 tw-bg-blueGray-100"
-						id="stack-element-3"
+						I am the 'shrink-me-element-1'. I am eager to grow as my parent told
+						me to be modest.
+					</div>
+					<div
+						class="tw-border-2 tw-border-pink-400"
+						id="shrink-me-element-2"
 						for-code-example
 					>
-						<div class="tw-flex tw-justify-between">
-							<span class="tw-text-sm tw-font-semibold tw-text-gray-900"
-								>I am the 3rd Element of a Stack</span
-							>
-							<span class="tw-text-sm tw-text-gray-500">2 days ago</span>
-						</div>
-						<p class="tw-text-sm tw-text-gray-900">
-							My stacker parent did advise me, look at the Spacer above me
-						</p>
-						<p class="tw-text-sm tw-text-gray-600">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-							tempus element...
-						</p>
-					</a>
+						I am the 'shrink-me-element-2'. I am eager to shrink as my parent
+						told me to be modest.
+					</div>
+					<div
+						class="tw-stack-byflex-grow-me tw-border-2 tw-border-pink-400"
+						id="grow-me-element-2"
+						for-code-example
+					>
+						I am the 'grow-me-element-2'. I defined me as an exemption to my
+						parent. I am eager to grow. More of an all-i-can-get guy.
+					</div>
 				</div>
 			</div>
 		</div>
