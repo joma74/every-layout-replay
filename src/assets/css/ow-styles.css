@@ -32,7 +32,7 @@
  */
 *[id|="description-example"] a[href^="http"] {
 	@apply tw-pr-3;
-	background: url(/src/assets/img/external-link--v1.png) no-repeat right top;
+	background: url(/src/assets/img/external-link.png) no-repeat right top;
 	background-size: 0.75rem 0.75rem;
 }
 
