@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Every Layout - Box, A List Of Bordered Boxes</title>
+	</head>
+	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
+	<body>
+		<div
+			class="tw-min-h-screen tw-p-8 tw-bg-white tw-stack-flex-grow-my"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-bg-white tw-rounded tw-shadow-xl tw-stack-6 tw-stack-flex-grow-my"
+				id="element-passepartout"
+			>
+				<div id="description-example">
+					<h2>Every Layout - Box, A List Of Bordered Boxes</h2>
+					<p>
+						Usage of css class
+						<span class="ow-code">tw-box-borderize-my</span> on
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a> </span
+						>, borderizing each element with a border of
+						<span class="ow-code">tw-border-2 tw-border-pink-400</span>.
+					</p>
+					<div id="code-example">
+						This element will be replaced by any element iff a root element of
+						id <span class="ow-code">usage-example</span> exists and having an
+						attribute of <span class="ow-code">for-code-example</span>. Then any
+						node having an attribute of
+						<span class="ow-code">for-code-example</span> is selected, formatted
+						and highlighted here.
+					</div>
+					<p class="tw-text-blueGray-400">
+						The background of all boxes is
+						<span class="ow-emphasis">colored</span> for demonstration.
+					</p>
+				</div>
+				<ul
+					class="tw-box-0 tw-box-borderize-my tw-border-2 tw-border-pink-400 tw-bg-blue-500"
+					id="usage-example"
+					for-code-example
+				>
+					<li class="tw-box-2" id="box-1" for-code-example>1st box</li>
+					<li class="tw-box-2" id="box-2" for-code-example>2nd box</li>
+					<li class="tw-box-2" id="box-3" for-code-example>3rd box</li>
+				</ul>
+			</div>
+		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
+	</body>
+</html>
