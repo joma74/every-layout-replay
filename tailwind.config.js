@@ -46,8 +46,12 @@ module.exports = {
 					},
 				}
 			})
+			/**
+			 * prefix only works if string starts with a dot
+			 */
+			let cssSelector = prefix(".box-").substr(1)
 			const boxElementsSameColor = {
-				[`[class^='tw-box-'] *, [class*=' tw-box-'] *`]: {
+				[`[class^='${cssSelector}'] *, [class*=' ${cssSelector}'] *`]: {
 					color: "inherit",
 				},
 			}
