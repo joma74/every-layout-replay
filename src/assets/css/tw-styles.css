@@ -104,20 +104,15 @@
 		flex-grow: 0 !important;
 	}
 
-	/** 
-     * Stack By Flex END
-     **/
-
-	/**
-      * OW Styles START
-      * (should be in ow-styles.css, but tech issue)
-      **/
-
-	#description-example {
-		@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-pl-2 tw-stack-2;
+	.tw-center-4 {
+		box-sizing: content-box;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	/** 
-     * OW Styles END
+     * Stack By Flex END
      **/
 }
