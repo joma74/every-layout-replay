@@ -53,8 +53,12 @@
 
 /* The right position of this element MUST be adjusted to the content, so not given. Example is style="right: -3ch" */
 *[id|="description-example"] .link-with-pill a:nth-of-type(2) {
-	@apply tw-absolute tw-inline-block tw-text-blue-500 tw-rounded-full tw-text-xs hover:tw-bg-blue-500 hover:tw-text-white  tw-border-blueGray-300 tw-border-2 tw-border-dashed;
+	@apply tw-hidden tw-absolute tw-text-blue-500 tw-rounded-full tw-text-xs hover:tw-bg-blue-500 hover:tw-text-white  tw-border-blueGray-300 tw-border-2 tw-border-dashed;
 	top: -50%;
+}
+
+*[id|="description-example"] .link-with-pill:hover a:nth-of-type(2) {
+	@apply tw-inline-block;
 }
 /**
  * LINK_WITH_PILL
