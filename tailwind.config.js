@@ -56,7 +56,7 @@ module.exports = {
 				},
 			}
 			const boxElementsBorder = {
-				[`.${prefix(`${e(`box-borderize-my`)}`)}`]: {
+				[`.${prefix(`${e(`box-borderize-my`)}`)} > * + *`]: {
 					"border-top": "inherit",
 				},
 			}
