@@ -1,11 +1,3 @@
-.ow-display-table {
-	display: table;
-}
-
-.ow-display-tcell {
-	display: table-cell;
-}
-
 :target {
 	@apply tw-bg-yellow-200 !important;
 }
