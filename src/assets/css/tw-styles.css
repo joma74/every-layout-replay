@@ -114,7 +114,7 @@
       **/
 
 	#description-example {
-		@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-pl-2 tw-stack-2 tw-stack-byflex-natural-me;
+		@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-pl-2 tw-stack-2;
 	}
 
 	/** 
