@@ -7,7 +7,7 @@
 }
 
 :target {
-	@apply tw-bg-yellow-200;
+	@apply tw-bg-yellow-200 !important;
 }
 
 .ow-emphasis {

@@ -6,6 +6,9 @@ module.exports = {
 	prefix: "tw-",
 	purge: [],
 	darkMode: false, // or 'media' or 'class'
+	corePlugins: {
+		boxSizing: false,
+	},
 	theme: {
 		extend: {
 			colors: {
@@ -21,12 +24,12 @@ module.exports = {
 	},
 	plugins: [
 		/**
-		 * Stack Plugin
+		 * Box Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-stack-1 > * + * {
-		 *      margin-top: 1.25rem;
+		 *  .tw-box-1 {
+		 *      padding: 0.25rem;
 		 *  }
 		 * ```
 		 * for each value of config("theme.spacing")
@@ -35,6 +38,40 @@ module.exports = {
 		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
 		 */ // @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
+			const boxParents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`box-${key}`)}`)}`]: {
+						padding: `${value}`,
+						display: "block",
+					},
+				}
+			})
+			const boxElementsSameColor = {
+				[`[class^='tw-box-'] *, [class*=' tw-box-'] *`]: {
+					color: "inherit",
+				},
+			}
+			const boxElementsBorder = {
+				[`.${prefix(`${e(`box-borderize-my`)}`)}`]: {
+					"border-top": "inherit",
+				},
+			}
+			addComponents([boxElementsBorder, boxElementsSameColor, ...boxParents])
+		}),
+		/**
+		 * Stack Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-stack-1 > * + * {
+		 *      margin-top: 0.25rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
 			const stackComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
 					[`.${prefix(`${e(`stack-${key}`)}`)} > * + *`]: {
