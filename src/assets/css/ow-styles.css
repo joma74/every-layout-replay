@@ -11,7 +11,7 @@
 }
 
 *[id|="description-example"] {
-	@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-p-2 tw-stack-2;
+	@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-box-2 tw-stack-2;
 }
 
 *[id|="description-example"] > h2 {
