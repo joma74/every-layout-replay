@@ -7,6 +7,7 @@
 @layer base {
 	:root {
 		--scrollbar-width: calc(100vw - 100%);
+		--measure-cap: 65ch;
 	}
 
 	.tw-h-inherit {
@@ -29,7 +30,7 @@
      */
 
 	* {
-		max-width: 65ch;
+		max-width: var(--measure-cap);
 	}
 
 	html,
@@ -192,7 +193,6 @@
 
 	.tw-center-4 {
 		box-sizing: content-box;
-		max-width: 65ch;
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 1rem;
@@ -201,7 +201,6 @@
 
 	.tw-center-8 {
 		box-sizing: content-box;
-		max-width: 65ch;
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 2rem;
