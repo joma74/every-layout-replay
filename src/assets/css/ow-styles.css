@@ -1,5 +1,5 @@
 :target {
-	@apply tw-bg-yellow-200 !important;
+	@apply tw-bg-yellow-200 tw-bg-clip-border !important;
 }
 
 .ow-emphasis {

@@ -22,13 +22,36 @@
 	.tw-w-full-cmpn-scrlb {
 		width: calc(100% - var(--scrollbar-width)) !important;
 	}
+
+	/** 
+     * Measure Cap START 
+     * *****************
+     */
+
+	* {
+		max-width: 65ch;
+	}
+
+	html,
+	body,
+	div,
+	header,
+	nav,
+	main,
+	footer {
+		max-width: none;
+		@apply tw-leading-relaxed;
+	}
+
+	/** 
+     * Measure Cap END
+     **/
 }
 
 @layer components {
 	/** 
      * Stack By Flex START
      * ******************
-     * Vsibility: PRIVATE 
      *
      * Stack container that let it's elements stack up.
      * Additionally, as instrinsic to flex,
@@ -36,6 +59,10 @@
      * same height as their stack container - see 
      * .tw-stack-flex-grow-my
      */
+
+	/**
+      * Visibility: PRIVATE (ptw-...) 
+      */
 	.ptw-stack-byflex {
 		display: flex;
 		flex-direction: column;
@@ -96,7 +123,7 @@
 	}
 
 	/**
-     * Exception class for a stack container's element.
+     * Exception class for a stack container's elements.
      * Enables shrinking-only of it's element. 
      */
 	.tw-stack-byflex-shrink-me {
@@ -104,15 +131,80 @@
 		flex-grow: 0 !important;
 	}
 
+	/** 
+     * Stack By Flex END
+     **/
+
+	/** 
+     * Measure Cap START 
+     * *****************
+     */
+
+	/**
+     * Exception class for not applying a measure cap on the container's elements.
+     * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
+     * see layer base.
+     */
+	.tw-measure-cap-not-my > * {
+		@apply tw-measure-cap-not-me;
+	}
+
+	/**
+     * Exception class for not applying a measure cap on an element.
+     * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
+     * see layer base.
+     */
+	.tw-measure-cap-not-me {
+		@apply tw-max-w-none;
+	}
+
+	/**
+     * Exception class for not applying a measure cap on the container's elements and on the element itself.
+     * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
+     * see layer base.
+     */
+	.tw-measure-cap-not-memy {
+		@apply tw-measure-cap-not-me;
+	}
+
+	/**
+     * Exception class for not applying a measure cap on the container's elements and on the element itself.
+     * Note that this @apply generates!
+     *  .tw-measure-cap-not-memy > * {
+     *      max-width: none;
+     *  }
+     */
+	.tw-measure-cap-not-memy {
+		@apply tw-measure-cap-not-my;
+	}
+
+	/** 
+     * Measure Cap END
+     **/
+
+	.tw-center-0 {
+		box-sizing: content-box;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
+
 	.tw-center-4 {
 		box-sizing: content-box;
+		max-width: 65ch;
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
 
-	/** 
-     * Stack By Flex END
-     **/
+	.tw-center-8 {
+		box-sizing: content-box;
+		max-width: 65ch;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }
