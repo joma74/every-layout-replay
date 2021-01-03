@@ -2,6 +2,10 @@
 	@apply tw-bg-yellow-200 tw-bg-clip-border !important;
 }
 
+:target * {
+	@apply tw-bg-yellow-200 tw-bg-clip-border !important;
+}
+
 .ow-emphasis {
 	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1;
 }
