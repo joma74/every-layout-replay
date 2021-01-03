@@ -61,6 +61,37 @@ module.exports = {
 				},
 			}
 			addComponents([boxElementsBorder, boxElementsSameColor, ...boxParents])
+		}), // @ts-ignore
+		/**
+		 * Center Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-4 {
+		 *      box-sizing: content-box;
+		 *      margin-left: auto;
+		 *      margin-right: auto;
+		 *      padding-left: 1rem;
+		 *      padding-right: 1rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-${key}`)}`)}`]: {
+						"box-sizing": "content-box",
+						"margin-left": "auto",
+						"margin-right": "auto",
+						"padding-left": `${value}`,
+						"padding-right": `${value}`,
+					},
+				}
+			})
+			addComponents(centerComponents)
 		}),
 		/**
 		 * Stack Plugin

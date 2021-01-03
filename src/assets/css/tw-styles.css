@@ -182,28 +182,4 @@
 	/** 
      * Measure Cap END
      **/
-
-	.tw-center-0 {
-		box-sizing: content-box;
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 0rem;
-		padding-right: 0rem;
-	}
-
-	.tw-center-4 {
-		box-sizing: content-box;
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
-
-	.tw-center-8 {
-		box-sizing: content-box;
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
 }
