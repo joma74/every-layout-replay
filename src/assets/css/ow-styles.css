@@ -76,3 +76,8 @@
 *[id|="code-example"] {
 	@apply tw-overflow-auto;
 }
+
+*[id|="usage-example"] {
+	max-width: calc(var(--measure-cap) + 0.5rem + 0.5rem + 2px + 2px)
+		/** same width as description-example **/;
+}
