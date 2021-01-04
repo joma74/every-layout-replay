@@ -69,6 +69,7 @@ module.exports = {
 		 * ```
 		 *  .tw-center-4 {
 		 *      box-sizing: content-box;
+		 *      max-width: max-content;
 		 *      margin-left: auto;
 		 *      margin-right: auto;
 		 *      padding-left: 1rem;
@@ -84,6 +85,7 @@ module.exports = {
 				return {
 					[`.${prefix(`${e(`center-${key}`)}`)}`]: {
 						"box-sizing": "content-box",
+						"max-width": "max-content",
 						"margin-left": "auto",
 						"margin-right": "auto",
 						"padding-left": `${value}`,
