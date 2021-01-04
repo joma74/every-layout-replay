@@ -27,37 +27,61 @@
 							target="_blank"
 							>Tailwind CSS spacing scale</a
 						>
-						No. 4 (4 * 0,25rem = 1rem). Both of the two next examples make use
-						of <span class="ow-code">tw-center-4</span>.
-					</p>
-					<p>
-						The first example
-						<span class="link-with-pill"
-							><a href="#shrinked-to-content">shrinked-to-content</a
-							><a href="#reset" style="right: -3ch">Reset</a>
-						</span>
-						additionally applies a <span class="ow-code">max-width</span> hint
-						of <span class="ow-code">max-content</span>. Hence the
-						<span class="ow-code">p</span> block shrinks to it's content,
-						leaving application for the margins to the left and right, in effect
-						centering their content. The paddings to the left and right remain,
-						because the <span class="ow-code">box-sizing</span> value of all
+						No. 4 (4 * 0,25rem = 1rem). All of the coming examples make use of
+						<span class="ow-code">tw-center-4</span>. Also, in all of the coming
+						examples the paddings to the left and right remain, because the
+						<span class="ow-code">box-sizing</span> value of all
 						<span class="ow-code">tw-center-*</span> is
 						<span class="ow-code">content-box</span>.
 					</p>
 					<p>
-						The second example
+						The first example,
 						<span class="link-with-pill"
-							><a href="#not-shrinked-to-content">not-shrinked-to-content</a
+							><a href="#shrinked-center">shrinked-center</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
-						does not apply any <span class="ow-code">max-width</span> hint.
+						, additionally applies a <span class="ow-code">max-width</span> hint
+						of <span class="ow-code">max-content</span> to the element defining
+						the <span class="ow-code">tw-center-4</span>. Hence the
+						<span class="ow-code">tw-center-4</span> element shrinks to it's
+						content, leaving application for the margins to the left and right,
+						in effect centering their content.
+					</p>
+					<p>
+						The second example,
+						<span class="link-with-pill"
+							><a href="#shrinked-content">shrinked-content</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, does not apply any <span class="ow-code">max-width</span> hint.
 						Hence the <span class="ow-code">p</span> block always expands to
-						it's parent's left and right edges, leaving no application for the
-						margins to the left and right. The paddings to the left and right
-						remain, because the <span class="ow-code">box-sizing</span> value of
-						all <span class="ow-code">tw-center-*</span> is
-						<span class="ow-code">content-box</span>.
+						it's container's left and right edges, leaving no application for
+						the margins to the left and right.
+					</p>
+
+					<p>
+						The third example,
+						<span class="link-with-pill"
+							><a href="#shrinked-container">shrinked-container</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, additionally applies a <span class="ow-code">max-width</span> hint
+						of <span class="ow-code">max-content</span>, this time to the
+						container of the element defining the
+						<span class="ow-code">tw-center-4</span>. Hence the
+						<span class="ow-code">p</span> does not expand, leaving no
+						application for the margins to the left and right.
+					</p>
+					<p>
+						The fourth example,
+						<span class="link-with-pill"
+							><a href="#shrinked-nothing">shrinked-nothing</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, does not apply any <span class="ow-code">max-width</span> hint.
+						Hence the <span class="ow-code">p</span> block always expands to
+						it's container's left and right edges, leaving no application for
+						the margins to the left and right.
 					</p>
 					<div id="code-example">
 						This element will be replaced by any element iff a root element of
@@ -68,36 +92,45 @@
 						and highlighted here.
 					</div>
 					<p class="tw-text-blueGray-400">
-						The elements' padding is colored with
-						<span class="ow-emphasis">tw-bg-purple-400</span>, while the
-						elements' margin is colored with
-						<span class="ow-emphasis">tw-bg-yellow-100</span>. The elements'
-						content is colored with
+						The element defining the
+						<span class="ow-code">tw-center-4</span> is colored with
+						<span class="ow-emphasis">tw-bg-purple-400</span>. It's container is
+						colored with <span class="ow-emphasis">tw-bg-yellow-100</span>,
+						while it's content element is colored with
 						<span class="ow-emphasis">tw-bg-blue-500</span>. To show these
 						colored effects, the DOM of the examples is contrived into multiple
-						HTML elements. In practice, just a single element with
+						HTML elements, applying
+						<span class="ow-code">tw-bg-clip-content</span> where appropriate.
+						In practice, just a single element with
 						<span class="ow-code">tw-center-4</span> would be sufficient.
 					</p>
 				</div>
 				<div class="tw-stack-4" id="usage-example" for-code-example>
-					<div
-						class="tw-bg-yellow-100"
-						id="shrinked-to-content"
-						for-code-example
-					>
+					<div class="tw-bg-yellow-100" id="shrinked-center" for-code-example>
 						<div
 							class="tw-center-4 tw-max-w-max tw-bg-purple-400"
 							id="in-practice-sufficient-1"
 							for-code-example
 						>
 							<p class="tw-bg-clip-content tw-bg-blue-500" for-code-example>
-								Shrinked
+								Shrinked Center
+							</p>
+						</div>
+					</div>
+					<div class="tw-bg-yellow-100" id="shrinked-content" for-code-example>
+						<div
+							class="tw-center-4 tw-bg-purple-400"
+							id="in-practice-sufficient-1"
+							for-code-example
+						>
+							<p class="tw-max-w-max tw-bg-blue-500" for-code-example>
+								Shrinked Content
 							</p>
 						</div>
 					</div>
 					<div
-						class="tw-bg-yellow-100"
-						id="not-shrinked-to-content"
+						class="tw-bg-yellow-100 tw-max-w-max"
+						id="shrinked-container"
 						for-code-example
 					>
 						<div
@@ -106,7 +139,18 @@
 							for-code-example
 						>
 							<p class="tw-bg-clip-content tw-bg-blue-500" for-code-example>
-								Not Shrinked
+								Shrinked Container
+							</p>
+						</div>
+					</div>
+					<div class="tw-bg-yellow-100" id="shrinked-nothing" for-code-example>
+						<div
+							class="tw-center-4 tw-bg-purple-400"
+							id="in-practice-sufficient-2"
+							for-code-example
+						>
+							<p class="tw-bg-clip-content tw-bg-blue-500" for-code-example>
+								Shrinked Nothing
 							</p>
 						</div>
 					</div>
