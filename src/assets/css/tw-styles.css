@@ -179,6 +179,46 @@
 		@apply tw-measure-cap-not-my;
 	}
 
+	/**/
+
+	/**
+     * Exception class for applying a measure cap on the container's elements.
+     * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
+     * see layer base.
+     */
+	.tw-measure-cap-my > * {
+		@apply tw-measure-cap-me;
+	}
+
+	/**
+     * Exception class for applying a measure cap on an element.
+     * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
+     * see layer base.
+     */
+	.tw-measure-cap-me {
+		max-width: var(--measure-cap);
+	}
+
+	/**
+     * Exception class for applying a measure cap on the container's elements and on the element itself.
+     * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
+     * see layer base.
+     */
+	.tw-measure-cap-memy {
+		@apply tw-measure-cap-me;
+	}
+
+	/**
+     * Exception class for applying a measure cap on the container's elements and on the element itself.
+     * Note that this @apply generates!
+     *  .tw-measure-cap-memy > * {
+     *      max-width: none;
+     *  }
+     */
+	.tw-measure-cap-memy {
+		@apply tw-measure-cap-my;
+	}
+
 	/** 
      * Measure Cap END
      **/
