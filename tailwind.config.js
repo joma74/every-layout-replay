@@ -63,7 +63,7 @@ module.exports = {
 			addComponents([boxElementsBorder, boxElementsSameColor, ...boxParents])
 		}), // @ts-ignore
 		/**
-		 * Center Plugin
+		 * Center By Margins Plugin
 		 *
 		 * Produces
 		 * ```
@@ -86,6 +86,43 @@ module.exports = {
 					[`.${prefix(`${e(`center-${key}`)}`)}`]: {
 						"box-sizing": "content-box",
 						"max-width": "max-content",
+						"margin-left": "auto",
+						"margin-right": "auto",
+						"padding-left": `${value}`,
+						"padding-right": `${value}`,
+					},
+				}
+			})
+			addComponents(centerComponents)
+		}),
+		/**
+		 * Center Byflex Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-4 {
+		 *      box-sizing: content-box;
+		 *      display: flex;
+		 *      flex-direction: column;
+		 *      align-items: center;
+		 *      margin-left: auto;
+		 *      margin-right: auto;
+		 *      padding-left: 1rem;
+		 *      padding-right: 1rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-byflex-${key}`)}`)}`]: {
+						"box-sizing": "content-box",
+						display: "flex",
+						"flex-direction": "column",
+						"align-items": "center",
 						"margin-left": "auto",
 						"margin-right": "auto",
 						"padding-left": `${value}`,
