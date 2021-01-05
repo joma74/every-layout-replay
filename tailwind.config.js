@@ -100,7 +100,7 @@ module.exports = {
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-center-4 {
+		 *  .tw-center-byflex-4 {
 		 *      box-sizing: content-box;
 		 *      display: flex;
 		 *      flex-direction: column;
