@@ -63,7 +63,7 @@ module.exports = {
 			addComponents([boxElementsBorder, boxElementsSameColor, ...boxParents])
 		}), // @ts-ignore
 		/**
-		 * Center By Margins Plugin
+		 * Center Horizontal By Margins Plugin
 		 *
 		 * Produces
 		 * ```
@@ -96,7 +96,7 @@ module.exports = {
 			addComponents(centerComponents)
 		}),
 		/**
-		 * Center Byflex Plugin
+		 * Center Horizontal Byflex Plugin
 		 *
 		 * Produces
 		 * ```
