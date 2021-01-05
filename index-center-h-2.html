@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - X</title>
+		<title>Every Layout - The Center, Horizontal, Byflex Align Items</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
@@ -14,11 +14,11 @@
 			id="container-passepartout"
 		>
 			<div
-				class="tw-center-0 tw-stack-6 tw-stack-byflex-grow-my tw-rounded tw-shadow-xl tw-bg-white"
+				class="tw-center-h-0 tw-stack-6 tw-stack-byflex-grow-my tw-rounded tw-shadow-xl tw-bg-white"
 				id="element-passepartout"
 			>
 				<div class="tw-stack-byflex-natural-me" id="description-example">
-					<h2>Every Layout - The Center, Byflex Align Items</h2>
+					<h2>Every Layout - The Center, Horizontal, Byflex Align Items</h2>
 					<p>
 						The first example,
 						<span class="link-with-pill"
@@ -26,9 +26,9 @@
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						shows an application of
-						<span class="ow-code">tw-center-byflex-4</span>, hence the element
-						shrinks to it's content and leaving application for the flex of
-						<span class="ow-code">align-items: center</span>, in effect
+						<span class="ow-code">tw-center-h-byflex-4</span>, hence the element
+						shrinks to it's instrinsic content and leaving application for the
+						flex of <span class="ow-code">align-items: center</span>, in effect
 						centering it's content.
 					</p>
 					<p>
@@ -40,7 +40,7 @@
 						, additionally applies a <span class="ow-code">max-width</span> hint
 						of <span class="ow-code">max-content</span>, this time to the
 						container of the element defining the
-						<span class="ow-code">tw-center-byflex-4</span>. Hence the
+						<span class="ow-code">tw-center-h-byflex-4</span>. Hence the
 						<span class="ow-code">p</span> does not expand, leaving no
 						application for the flex of
 						<span class="ow-code">align-items: center</span>. Still, the
@@ -53,7 +53,7 @@
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						, at last, just shows the minimal sufficent application of
-						<span class="ow-code">tw-center-byflex-4</span>.
+						<span class="ow-code">tw-center-h-byflex-4</span>.
 					</p>
 					<div id="code-example">
 						<p class="tw-text-red-600">
@@ -67,21 +67,21 @@
 					</div>
 					<p class="tw-text-blueGray-400">
 						In the first and second example, the element defining the
-						<span class="ow-code">tw-center-4</span> is colored with
+						<span class="ow-code">tw-center-h-4</span> is colored with
 						<span class="ow-emphasis">tw-bg-purple-400</span>. It's container is
 						colored with <span class="ow-emphasis">tw-bg-yellow-100</span>,
 						while it's content element is colored with
 						<span class="ow-emphasis">tw-bg-blue-500</span>. To show these
 						colored effects, the DOM of the examples is contrived into multiple
 						HTML elements. In practice, just a single element with
-						<span class="ow-code">tw-center-4</span> would be sufficient - this
-						is what the third example shows.
+						<span class="ow-code">tw-center-h-4</span> would be sufficient -
+						this is what the third example shows.
 					</p>
 				</div>
 				<div id="usage-example" for-code-example>
 					<div class="tw-bg-yellow-100" id="center" for-code-example>
-						<div class="tw-center-byflex-4 tw-bg-purple-400" for-code-example>
-							<p class="tw-bg-blue-500" for-code-example>Shrinked Center</p>
+						<div class="tw-center-h-byflex-4 tw-bg-purple-400" for-code-example>
+							<p class="tw-bg-blue-500" for-code-example>Instrinsic Center</p>
 						</div>
 					</div>
 					<div
@@ -89,11 +89,11 @@
 						id="minimal-container"
 						for-code-example
 					>
-						<div class="tw-center-byflex-4 tw-bg-purple-400" for-code-example>
+						<div class="tw-center-h-byflex-4 tw-bg-purple-400" for-code-example>
 							<p class="tw-bg-blue-500" for-code-example>Shrinked Container</p>
 						</div>
 					</div>
-					<div class="tw-center-byflex-4" id="sufficient" for-code-example>
+					<div class="tw-center-h-byflex-4" id="sufficient" for-code-example>
 						A sufficient example
 					</div>
 				</div>

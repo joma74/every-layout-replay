@@ -67,7 +67,7 @@ module.exports = {
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-center-4 {
+		 *  .tw-center-h-4 {
 		 *      box-sizing: content-box;
 		 *      max-width: max-content;
 		 *      margin-left: auto;
@@ -83,7 +83,7 @@ module.exports = {
 		 */ plugin(function ({ addComponents, e, prefix, config }) {
 			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
-					[`.${prefix(`${e(`center-${key}`)}`)}`]: {
+					[`.${prefix(`${e(`center-h-${key}`)}`)}`]: {
 						"box-sizing": "content-box",
 						"max-width": "max-content",
 						"margin-left": "auto",
@@ -100,7 +100,7 @@ module.exports = {
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-center-byflex-4 {
+		 *  .tw-center-h-byflex-4 {
 		 *      box-sizing: content-box;
 		 *      display: flex;
 		 *      flex-direction: column;
@@ -118,7 +118,7 @@ module.exports = {
 		 */ plugin(function ({ addComponents, e, prefix, config }) {
 			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
-					[`.${prefix(`${e(`center-byflex-${key}`)}`)}`]: {
+					[`.${prefix(`${e(`center-h-byflex-${key}`)}`)}`]: {
 						"box-sizing": "content-box",
 						display: "flex",
 						"flex-direction": "column",
