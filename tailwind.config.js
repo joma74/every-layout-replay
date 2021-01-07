@@ -267,7 +267,7 @@ module.exports = {
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-stack-1 > * + * {
+		 *  .tw-stack-v-1 > * + * {
 		 *      margin-top: 0.25rem;
 		 *  }
 		 * ```
@@ -278,7 +278,7 @@ module.exports = {
 		 */ plugin(function ({ addComponents, e, prefix, config }) {
 			const stackComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
-					[`.${prefix(`${e(`stack-${key}`)}`)} > * + *`]: {
+					[`.${prefix(`${e(`stack-v-${key}`)}`)} > * + *`]: {
 						"margin-top": `${value}`,
 					},
 				}
@@ -286,11 +286,11 @@ module.exports = {
 			addComponents(stackComponents)
 		}),
 		/**
-		 * Stack Justify At Start and Stack-Spring Plugin
+		 * Stack Justify At Start and stack-v-Spring Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-stack-byflex-pull-up {
+		 *  .tw-stack-v-byflex-pull-up {
 		 *    display: flex;
 		 *    flex-direction: column;
 		 *    justify-content: start;
@@ -298,7 +298,7 @@ module.exports = {
 		 * ```
 		 * Plus
 		 * ```
-		 *    .tw-stack-byflex-pull-up.tw-stack-byflex-spring-after-1 > :nth-child(1) {
+		 *    .tw-stack-v-byflex-pull-up.tw-stack-v-byflex-spring-after-1 > :nth-child(1) {
 		 *    margin-bottom: auto;
 		 *    }
 		 *    ... for 1..4
@@ -309,7 +309,7 @@ module.exports = {
 		// @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
 			const stackSpringParent = {
-				".stack-byflex-pull-up": {
+				".stack-v-byflex-pull-up": {
 					display: "flex",
 					"flex-direction": "column",
 					"justify-content": "start",
@@ -317,8 +317,8 @@ module.exports = {
 			}
 			const stackSpringElements = _.map([1, 2, 3, 4], (value) => {
 				return {
-					[`.${prefix(`stack-byflex-pull-up`)}.${prefix(
-						`${e(`stack-byflex-spring-after-${value}`)}`,
+					[`.${prefix(`stack-v-byflex-pull-up`)}.${prefix(
+						`${e(`stack-v-byflex-spring-after-${value}`)}`,
 					)} > :nth-child(${value})`]: {
 						"margin-bottom": "auto",
 					},

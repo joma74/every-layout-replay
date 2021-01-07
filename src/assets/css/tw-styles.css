@@ -58,13 +58,13 @@
      * Additionally, as instrinsic to flex,
      * the stacked element's _CAN_ grow to take the 
      * same height as their stack container - see 
-     * .tw-stack-flex-grow-my
+     * .tw-stack-v-flex-grow-my
      */
 
 	/**
       * Visibility: PRIVATE (ptw-...) 
       */
-	.ptw-stack-byflex {
+	.ptw-stack-v-byflex {
 		display: flex;
 		flex-direction: column;
 	}
@@ -73,30 +73,30 @@
      * Stack container that let it's elements stack up  
      * plus ...
      **/
-	.tw-stack-byflex-grow-my {
-		@apply ptw-stack-byflex;
+	.tw-stack-v-byflex-grow-my {
+		@apply ptw-stack-v-byflex;
 	}
 
 	/**
      * ... advise them to grow to its's height.
      **/
-	.tw-stack-byflex-grow-my > * {
-		@apply tw-stack-byflex-grow-me;
+	.tw-stack-v-byflex-grow-my > * {
+		@apply tw-stack-v-byflex-grow-me;
 	}
 
 	/** 
      * Stack container that let it's elements stack up plus  
      * advise them to expand to its's height.
      **/
-	.tw-stack-byflex-shrink-my {
-		@apply ptw-stack-byflex;
+	.tw-stack-v-byflex-shrink-my {
+		@apply ptw-stack-v-byflex;
 	}
 
 	/**
      * ... advise them to shrink to its's height.
      **/
-	.tw-stack-byflex-shrink-my > * {
-		@apply tw-stack-byflex-shrink-me;
+	.tw-stack-v-byflex-shrink-my > * {
+		@apply tw-stack-v-byflex-shrink-me;
 	}
 
 	/** 
@@ -109,7 +109,7 @@
      * Exception class for a stack container's element.
      * Enables the intrinsic, "natural" sizing of it's element.
      */
-	.tw-stack-byflex-natural-me {
+	.tw-stack-v-byflex-natural-me {
 		flex-shrink: 0 !important;
 		flex-grow: 0 !important;
 	}
@@ -118,7 +118,7 @@
      * Exception class for a stack container's element.
      * Enables growing-only of it's element. 
      */
-	.tw-stack-byflex-grow-me {
+	.tw-stack-v-byflex-grow-me {
 		flex-grow: 1 !important;
 	}
 
@@ -126,7 +126,7 @@
      * Exception class for a stack container's elements.
      * Enables shrinking-only of it's element. 
      */
-	.tw-stack-byflex-shrink-me {
+	.tw-stack-v-byflex-shrink-me {
 		flex-shrink: 1 !important;
 	}
 
@@ -217,20 +217,20 @@
 		@apply tw-measure-cap-my;
 	}
 
-	/* .tw-center-v-byflex-bymar-4 {
-		box-sizing: content-box;
-		display: flex;
-		flex-direction: column;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-	}
-
-	[class*="tw-center-v-byflex-bymar-"] > .tw-center-v-byflex-bymar-principal {
-		margin-top: auto;
-		margin-bottom: auto;
-	} */
-
 	/** 
      * Measure Cap END
+     **/
+
+	/** 
+     * Workspace Area START 
+     * *****************
+     */
+
+	.tw-stack-v-h-6 > * + * {
+		margin-left: 1.5rem;
+	}
+
+	/** 
+     * Workspace Area END
      **/
 }
