@@ -96,17 +96,15 @@ module.exports = {
 			addComponents(centerComponents)
 		}),
 		/**
-		 * Center Horizontal Byflex Plugin
+		 * Center Horizontal Byflex Bycontainer Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-center-h-byflex-4 {
+		 *  .tw-center-h-byflex-bycon-4 {
 		 *      box-sizing: content-box;
 		 *      display: flex;
 		 *      flex-direction: column;
 		 *      align-items: center;
-		 *      margin-left: auto;
-		 *      margin-right: auto;
 		 *      padding-left: 1rem;
 		 *      padding-right: 1rem;
 		 *  }
@@ -118,15 +116,89 @@ module.exports = {
 		 */ plugin(function ({ addComponents, e, prefix, config }) {
 			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
-					[`.${prefix(`${e(`center-h-byflex-${key}`)}`)}`]: {
+					[`.${prefix(`${e(`center-h-byflex-bycon-${key}`)}`)}`]: {
 						"box-sizing": "content-box",
 						display: "flex",
 						"flex-direction": "column",
 						"align-items": "center",
-						"margin-left": "auto",
-						"margin-right": "auto",
 						"padding-left": `${value}`,
 						"padding-right": `${value}`,
+					},
+				}
+			})
+			addComponents(centerComponents)
+		}),
+		/**
+		 * Center Horizontal Byflex Bymargin Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-h-byflex-bymar-4 {
+		 *      box-sizing: content-box;
+		 *      display: flex;
+		 *      flex-direction: column;
+		 *      padding-left: 1rem;
+		 *      padding-right: 1rem;
+		 *      "text-align": "center"
+		 *  }
+		 *  [class*="tw-center-h-byflex-bymar] > * {
+		 *      margin-left: auto;
+		 *      margin-right: auto;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-h-byflex-bymar-${key}`)}`)}`]: {
+						"box-sizing": "content-box",
+						display: "flex",
+						"flex-direction": "column",
+						"padding-left": `${value}`,
+						"padding-right": `${value}`,
+						"text-align": "center" /*for text-only node*/,
+					},
+				}
+			})
+			const centerComponentElements = {
+				[`[class*="${prefix(`${e(`center-h-byflex-bymar`)}`)}"] > *`]: {
+					"margin-left": "auto",
+					"margin-right": "auto",
+				},
+			}
+			addComponents([centerComponents, centerComponentElements])
+		}),
+		/**
+		 * Center Vertical Byflex Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-v-byflex-4 {
+		 *      box-sizing: content-box;
+		 *      display: flex;
+		 *      flex-direction: column;
+		 *      margin-top: auto;
+		 *      margin-bottom: auto;
+		 *      padding-top: 1rem;
+		 *      padding-bottom: 1rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-v-byflex-${key}`)}`)}`]: {
+						"box-sizing": "content-box",
+						display: "flex",
+						"flex-direction": "column",
+						"padding-top": `${value}`,
+						"padding-bottom": `${value}`,
 					},
 				}
 			})
