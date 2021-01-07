@@ -33,6 +33,11 @@ module.exports = {
 		 *  }
 		 * ```
 		 * for each value of config("theme.spacing")
+		 * ```
+		 * [class^='tw-box-'] *, [class*=' tw-box-'] * {
+		 *   color: inherit;
+		 * }
+		 * ```
 		 *
 		 * For the spacing scale, see
 		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
@@ -172,16 +177,15 @@ module.exports = {
 			addComponents([centerComponents, centerComponentElements])
 		}),
 		/**
-		 * Center Vertical Byflex Plugin
+		 * Center Vertical Byflex Bycontainer Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-center-v-byflex-4 {
+		 *  .tw-center-v-byflex-bycon-4 {
 		 *      box-sizing: content-box;
 		 *      display: flex;
 		 *      flex-direction: column;
-		 *      margin-top: auto;
-		 *      margin-bottom: auto;
+		 *      justify-content: center
 		 *      padding-top: 1rem;
 		 *      padding-bottom: 1rem;
 		 *  }
@@ -193,7 +197,43 @@ module.exports = {
 		 */ plugin(function ({ addComponents, e, prefix, config }) {
 			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
 				return {
-					[`.${prefix(`${e(`center-v-byflex-${key}`)}`)}`]: {
+					[`.${prefix(`${e(`center-v-byflex-bycon-${key}`)}`)}`]: {
+						"box-sizing": "content-box",
+						display: "flex",
+						"flex-direction": "column",
+						"justify-content": "center",
+						"padding-top": `${value}`,
+						"padding-bottom": `${value}`,
+					},
+				}
+			})
+			addComponents(centerComponents)
+		}),
+		/**
+		 * Center Vertical Byflex Bymargin Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-v-byflex-bymar-4 {
+		 *      box-sizing: content-box;
+		 *      display: flex;
+		 *      flex-direction: column;
+		 *      padding-top: 1rem;
+		 *      padding-bottom: 1rem;
+		 *  }
+		 *  [class*="tw-center-v-byflex-bymar-"] > .tw-center-v-byflex-bymar-principal {
+		 *      margin-top: auto;
+		 *      margin-bottom: auto;
+		 *   }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-v-byflex-bymar-${key}`)}`)}`]: {
 						"box-sizing": "content-box",
 						display: "flex",
 						"flex-direction": "column",
@@ -202,7 +242,25 @@ module.exports = {
 					},
 				}
 			})
-			addComponents(centerComponents)
+			let cssSelector = prefix(".center-v-byflex-bymar-").substr(1)
+			const centerComponentElements = {
+				[`[class^='${cssSelector}'] > .${prefix(
+					`${e(`center-v-byflex-bymar-principal`)}`,
+				)}, [class*=' ${cssSelector}'] > .${prefix(
+					`${e(`center-v-byflex-bymar-principal`)}`,
+				)}`]: {
+					"margin-top": "auto",
+					"margin-bottom": "auto",
+				},
+			}
+			// for a node only containing text
+			const centerMe = {
+				[`.${prefix(`${e(`center-v-byflex-bymar-me`)}`)}`]: {
+					"margin-top": "auto",
+					"margin-bottom": "auto",
+				},
+			}
+			addComponents([centerComponents, centerComponentElements, centerMe])
 		}),
 		/**
 		 * Stack Plugin

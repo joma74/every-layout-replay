@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Every Layout - The Center, Vertical, By Margins</title>
+	</head>
+	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
+	<body>
+		<div
+			class="tw-min-h-screen tw-box-8 tw-stack-byflex-grow-my tw-bg-white"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-center-h-0 tw-stack-6 tw-stack-byflex-grow-my tw-rounded tw-shadow-xl tw-bg-white"
+				id="element-passepartout"
+			>
+				<div class="tw-stack-byflex-natural-me" id="description-example">
+					<h2>Every Layout The Center, Vertical, By Margins</h2>
+					<p>
+						An <span class="ow-code">ow-code</span>. A target link-with-pill
+						<span class="link-with-pill"
+							><a href="#usage-example">usage-example</a
+							><a href="#reset" style="right: -3ch">Reset</a> </span
+						>. An external link
+						<a
+							href="https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale"
+							target="_blank"
+							>Tailwind CSS spacing scale</a
+						>.
+					</p>
+					<div id="code-example">
+						<p class="tw-text-red-600">
+							This element will be replaced by any element iff a root element of
+							id <span class="ow-code">usage-example</span> exists and having an
+							attribute of <span class="ow-code">for-code-example</span>. Then
+							any node having an attribute of
+							<span class="ow-code">for-code-example</span> is selected,
+							formatted and highlighted here.
+						</p>
+					</div>
+					<p class="tw-text-blueGray-400">
+						An <span class="ow-emphasis">ow-emphasis</span>
+					</p>
+				</div>
+				<div
+					class="tw-stack-6 tw-stack-byflex-grow-my"
+					id="usage-example"
+					for-code-example
+				>
+					<div
+						class="tw-stack-byflex-grow-my tw-bg-yellow-100"
+						id="center"
+						for-code-example
+					>
+						<div
+							class="tw-center-h-4 tw-center-v-byflex-bymar-4 tw-bg-purple-400"
+							for-code-example
+						>
+							<button
+								class="tw-center-v-byflex-bymar-principal ow-button-modern-base ow-button-modern-secondary tw-bg-clip-padding"
+								type="button"
+								for-code-example
+							>
+								Press Me
+							</button>
+						</div>
+					</div>
+					<div
+						class="tw-stack-byflex-grow-my tw-bg-yellow-100"
+						id="center"
+						for-code-example
+					>
+						<div
+							class="tw-center-h-4 tw-center-v-byflex-bymar-4 tw-bg-purple-400"
+							for-code-example
+						>
+							<button
+								class="tw-center-v-byflex-bymar-principal ow-button-modern-base ow-button-modern-secondary tw-bg-clip-padding"
+								type="button"
+								for-code-example
+							>
+								Secondary Action
+							</button>
+							<button
+								class="tw-center-v-byflex-bymar-principal ow-button-modern-base ow-button-modern-primary tw-bg-clip-padding"
+								type="button"
+								for-code-example
+							>
+								Primary Action
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
+	</body>
+</html>
