@@ -14,11 +14,11 @@
 	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono tw-text-sm;
 }
 
-*[id|="description-example"] {
+*[id="description-example"] {
 	@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-box-2 tw-stack-2;
 }
 
-*[id|="description-example"] > h2 {
+*[id="description-example"] > h2 {
 	@apply tw-font-bold;
 }
 
@@ -26,7 +26,7 @@
  * External Link hinted by an "external link" image displayed 
  * at the end of an element
  */
-*[id|="description-example"] a[href^="http"] {
+*[id="description-example"] a[href^="http"] {
 	@apply tw-pr-3;
 	background: url(/src/assets/img/external-link.png) no-repeat right top;
 	background-size: 0.75rem 0.75rem;
@@ -35,8 +35,36 @@
 /**
  * A simple Link
  */
-*[id|="description-example"] a {
+*[id="description-example"] a {
 	@apply tw-border-blueGray-300 tw-border-2 tw-px-1 tw-border-dashed;
+}
+
+/**
+ * A modern styled button
+ * See https://tailwindui.com/preview  Application UI > Headings > Page Headings > With meta and actions
+ * See https://tailwindui.com/preview#component-7654075f650c9f1044bfcf1b1b6ffd77
+ */
+.ow-button-modern-base {
+	@apply tw-box-2 tw-border tw-rounded-md tw-shadow-sm tw-text-sm tw-font-medium tw-m-1 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2  focus:tw-ring-indigo-500;
+}
+
+/**
+ * A modern styled secondary button
+ * See https://tailwindui.com/preview  Application UI > Headings > Page Headings > With meta and actions
+ * See https://tailwindui.com/preview#component-7654075f650c9f1044bfcf1b1b6ffd77
+ */
+button.ow-button-modern-secondary {
+	@apply tw-border-gray-300 tw-text-gray-700 tw-bg-white hover:tw-bg-gray-50;
+}
+
+/**
+ * A modern styled primary button
+ * See https://tailwindui.com/preview  Application UI > Headings > Page Headings > With meta and actions
+ * See https://tailwindui.com/preview#component-7654075f650c9f1044bfcf1b1b6ffd77
+ */
+button.ow-button-modern-primary {
+	@apply ow-button-modern-base;
+	@apply tw-border-transparent tw-text-white tw-bg-indigo-600 hover:tw-bg-indigo-700;
 }
 
 /**
@@ -51,17 +79,17 @@
  *	><a href="#reset" style="right: -3ch">Reset</a>
  * </span> 
  **/
-*[id|="description-example"] span.link-with-pill {
+*[id="description-example"] span.link-with-pill {
 	@apply tw-inline-block tw-relative hover:tw-bg-yellow-200;
 }
 
 /* The right position of this element MUST be adjusted to the content, so not given. Example is style="right: -3ch" */
-*[id|="description-example"] .link-with-pill a:nth-of-type(2) {
+*[id="description-example"] .link-with-pill a:nth-of-type(2) {
 	@apply tw-hidden tw-absolute tw-rounded-full tw-text-xs tw-bg-blue-500 tw-text-white tw-border-blueGray-300 tw-border-2 tw-border-dashed tw-transform tw-rotate-3;
 	top: -50%;
 }
 
-*[id|="description-example"] .link-with-pill:hover a:nth-of-type(2) {
+*[id="description-example"] .link-with-pill:hover a:nth-of-type(2) {
 	@apply tw-inline-block;
 }
 /**
@@ -69,15 +97,15 @@
  * END
  **/
 
-*[id|="description-example"] > p:nth-last-of-type(1) {
+*[id="description-example"] > p:nth-last-of-type(1) {
 	@apply tw-text-blueGray-400;
 }
 
-*[id|="code-example"] {
+*[id="code-example"] {
 	@apply tw-overflow-auto;
 }
 
-*[id|="usage-example"] {
+*[id="usage-example"] {
 	max-width: calc(var(--measure-cap) + 0.5rem + 0.5rem + 2px + 2px)
 		/** same width as description-example **/;
 }
