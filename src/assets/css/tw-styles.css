@@ -119,7 +119,6 @@
      * Enables growing-only of it's element. 
      */
 	.tw-stack-byflex-grow-me {
-		flex-shrink: 0 !important;
 		flex-grow: 1 !important;
 	}
 
@@ -129,7 +128,6 @@
      */
 	.tw-stack-byflex-shrink-me {
 		flex-shrink: 1 !important;
-		flex-grow: 0 !important;
 	}
 
 	/** 
@@ -218,6 +216,19 @@
 	.tw-measure-cap-memy {
 		@apply tw-measure-cap-my;
 	}
+
+	/* .tw-center-v-byflex-bymar-4 {
+		box-sizing: content-box;
+		display: flex;
+		flex-direction: column;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	[class*="tw-center-v-byflex-bymar-"] > .tw-center-v-byflex-bymar-principal {
+		margin-top: auto;
+		margin-bottom: auto;
+	} */
 
 	/** 
      * Measure Cap END
