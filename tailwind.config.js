@@ -263,7 +263,30 @@ module.exports = {
 			addComponents([centerComponents, centerComponentElements, centerMe])
 		}),
 		/**
-		 * Stack Plugin
+		 * Stack Horizontal Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-stack-h-1 > * + * {
+		 *      margin-left: 0.25rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const stackComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`stack-h-${key}`)}`)} > * + *`]: {
+						"margin-left": `${value}`,
+					},
+				}
+			})
+			addComponents(stackComponents)
+		}),
+		/**
+		 * Stack Vertical Plugin
 		 *
 		 * Produces
 		 * ```
@@ -286,7 +309,7 @@ module.exports = {
 			addComponents(stackComponents)
 		}),
 		/**
-		 * Stack Justify At Start and stack-v-Spring Plugin
+		 * Stack Vertical Byflex Pull-Up and Spring-After Plugin
 		 *
 		 * Produces
 		 * ```
