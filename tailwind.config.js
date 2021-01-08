@@ -17,6 +17,13 @@ module.exports = {
 				trueGray: colors.trueGray,
 				warmGray: colors.warmGray,
 			},
+			flex: {
+				/** Browser Bug
+				 * A flex basis of 0% is not interpreted by Browsers the same as 0.
+				 * Additionally, if set via composite flex: 1 0;, FF converts mistakenly that to flex 1 1 0px;
+				 * */
+				1: "1; flex-grow: 1; flex-shrink: 1; flex-basis: 0;",
+			},
 		},
 	},
 	variants: {
