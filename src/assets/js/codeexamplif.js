@@ -1,8 +1,17 @@
 Prism = Prism || {}
 Prism.manual = true
+const USAGEEXAMPLE_ID_NAME = "usage-example"
 const FORCODEEXAMPLE_ATT_NAME = "for-code-example"
+/**
+ *  Deep copy node by id of USAGEEXAMPLE_ID_NAME
+ **/
 /** @type {HTMLElement} */
-const codeExampleDom = document.getElementById("usage-example").cloneNode(true)
+const codeExampleDom = document
+	.getElementById(USAGEEXAMPLE_ID_NAME)
+	.cloneNode(true)
+/**
+ *  Find all nodes that are text nodes or not having an attribute named FORCODEEXAMPLE_ATT_NAME
+ */
 const notCodingExampleElements = document.createNodeIterator(
 	codeExampleDom,
 	NodeFilter.SHOW_ALL,
@@ -12,6 +21,9 @@ const notCodingExampleElements = document.createNodeIterator(
 		else return NodeFilter.FILTER_SKIP
 	},
 )
+/**
+ *  Remove all nodes not selected by the previous iteration
+ **/
 /** @type {Node} */
 let notCodingExampleElement = null
 while (
