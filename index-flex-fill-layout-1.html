@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flexbox - Fill Layout</title>
+	</head>
+	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
+	<body>
+		<div
+			class="tw-min-h-screen tw-box-8 tw-stack-v-byflex-grow-my tw-bg-white"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-center-h-0 tw-stack-v-6 tw-stack-v-byflex-grow-my tw-rounded tw-shadow-xl tw-bg-white"
+				id="element-passepartout"
+			>
+				<div class="tw-stack-v-byflex-natural-me" id="description-example">
+					<h2>Flexbox - Fill Layout</h2>
+					<p>
+						This serie shows how a
+						<span class="ow-emphasis">column</span> directed
+						<span class="ow-emphasis">flex box</span> is converted to a Fill
+						Layout.
+					</p>
+					<p>
+						The first step,
+						<span class="link-with-pill"
+							><a href="#step-1">step-1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, shows the initial state, which is a
+						<span class="ow-emphasis">flex-box</span> of direction
+						<span class="ow-emphasis">column</span>. Note that such a direction
+						of <span class="ow-emphasis">column</span> displays it's items
+						row-wise. Note also, that the contained elements
+						<span class="link-with-pill"
+							><a href="#step-1-elm-1">step-1-elm-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#step-1-elm-2">step-1-elm-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						are no flex-items, as
+						<span class="link-with-pill"
+							><a href="#step-1">step-1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						is not a <span class="ow-emphasis">flex-box</span>.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#step-2">step-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						then transforms the container
+						<span class="link-with-pill"
+							><a href="#step-2">step-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						into a <span class="ow-emphasis">flex-box</span> of direction
+						<span class="ow-emphasis">row</span>. The contained elements
+						<span class="link-with-pill"
+							><a href="#step-2-elm-1">step-2-elm-1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#step-2-elm-2">step-2-elm-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						are now flex-items which, by default, stretch against their
+						<span class="ow-emphasis">cross-axis</span>, which is of vertical
+						orientation.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#step-3">step-3</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						then transforms
+						<span class="link-with-pill"
+							><a href="#step-3-elm-1">step-3-elm-1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#step-3-elm-2">step-3-elm-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						themselves into <span class="ow-emphasis">flex-box</span> of
+						direction <span class="ow-emphasis">row</span>. They are now of
+						horizontal orientation, but as the initial value of a
+						<span class="ow-emphasis">flex-box</span> of
+						<span class="ow-code">0 1 auto</span> does not allow their flex
+						items (in this case text nodes) to grow, those only take their
+						natural space.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#step-4">step-4</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						then applies <span class="ow-code">tw-flex-grow</span> on each
+						<span class="link-with-pill"
+							><a href="#step-4-elm-1">step-4-elm-1</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						and
+						<span class="link-with-pill"
+							><a href="#step-4-elm-2">step-4-elm-2</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						allowing them to grow their items (in this case text nodes) into the
+						space available in their horizontal orientation.
+					</p>
+					<div id="code-example">
+						<p class="tw-text-red-600">
+							This element will be replaced by any element iff a root element of
+							id <span class="ow-code">usage-example</span> exists and having an
+							attribute of <span class="ow-code">for-code-example</span>. Then
+							any node having an attribute of
+							<span class="ow-code">for-code-example</span> is selected,
+							formatted and highlighted here.
+						</p>
+					</div>
+					<p class="tw-text-blueGray-400">
+						A class of <span class="ow-code">tw-flex-1</span> on each
+						<span class="ow-emphasis">step-*</span> container is applied only to
+						make those, being each a
+						<span class="ow-emphasis">flex-item</span> themselves, the same
+						height - regardless of it's natural size.
+					</p>
+				</div>
+				<div
+					class="tw-stack-v-byflex-grow-my"
+					style="min-height: 30rem"
+					id="usage-example"
+					for-code-example
+				>
+					<div
+						class="tw-stack-v-6 tw-flex-1 tw-outline-pink-400"
+						id="step-1"
+						for-code-example
+					>
+						<div
+							class="tw-box-2 tw-bg-blue-500"
+							id="step-1-elm-1"
+							for-code-example
+						>
+							In Dir-Col
+						</div>
+						<div
+							class="tw-box-2 tw-bg-blue-500"
+							id="step-1-elm-2"
+							for-code-example
+						>
+							In Dir-Col
+						</div>
+					</div>
+					<div
+						class="tw-flex tw-flex-row tw-flex-1 tw-stack-h-6 tw-outline-pink-400"
+						id="step-2"
+						for-code-example
+					>
+						<div
+							class="tw-box-2 tw-bg-blue-500"
+							id="step-2-elm-1"
+							for-code-example
+						>
+							In Dir-Row In Dir-Col
+						</div>
+						<div
+							class="tw-box-2 tw-bg-blue-500"
+							id="step-2-elm-2"
+							for-code-example
+						>
+							In Dir-Row In Dir-Col
+						</div>
+					</div>
+					<div
+						class="tw-flex tw-flex-row tw-flex-1 tw-stack-h-6 tw-outline-pink-400"
+						id="step-3"
+						for-code-example
+					>
+						<div
+							class="tw-flex tw-flex-row tw-box-2 tw-bg-blue-500"
+							id="step-3-elm-1"
+							for-code-example
+						>
+							In Dir-Row In Dir-Row In Dir-Col
+						</div>
+						<div
+							class="tw-flex tw-flex-row tw-box-2 tw-bg-blue-500"
+							id="step-3-elm-2"
+							for-code-example
+						>
+							In Dir-Row In Dir-Row In Dir-Col
+						</div>
+					</div>
+					<div
+						class="tw-flex tw-flex-row tw-flex-1 tw-stack-h-6 tw-outline-pink-400"
+						id="step-4"
+						for-code-example
+					>
+						<div
+							class="tw-flex tw-flex-row tw-flex-grow tw-box-2 tw-bg-blue-500"
+							id="step-4-elm-1"
+							for-code-example
+						>
+							Grow In Dir-Row In Dir-Row In Dir-Col
+						</div>
+						<div
+							class="tw-flex tw-flex-row tw-flex-grow tw-box-2 tw-bg-blue-500"
+							id="step-4-elm-2"
+							for-code-example
+						>
+							Grow In Dir-Row In Dir-Row In Dir-Col
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
+	</body>
+</html>
