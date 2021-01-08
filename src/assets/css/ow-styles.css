@@ -45,7 +45,7 @@
  * See https://tailwindui.com/preview#component-7654075f650c9f1044bfcf1b1b6ffd77
  */
 .ow-button-modern-base {
-	@apply tw-box-2 tw-border tw-rounded-md tw-shadow-sm tw-text-sm tw-font-medium tw-m-1 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2  focus:tw-ring-indigo-500;
+	@apply tw-box-2 tw-border tw-rounded-md tw-shadow-sm tw-text-sm tw-font-medium focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2  focus:tw-ring-indigo-500;
 }
 
 /**

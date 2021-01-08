@@ -111,6 +111,39 @@ module.exports = {
 			addComponents(centerComponents)
 		}),
 		/**
+		 * Center Vertical By Margins Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-v-4 {
+		 *      box-sizing: content-box;
+		 *      max-height: max-content;
+		 *      margin-top: auto;
+		 *      margin-bottom: auto;
+		 *      padding-top: 1rem;
+		 *      padding-bottom: 1rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-v-${key}`)}`)}`]: {
+						"box-sizing": "content-box",
+						"max-height": "max-content",
+						"margin-top": "auto",
+						"margin-bottom": "auto",
+						"padding-top": `${value}`,
+						"padding-bottom": `${value}`,
+					},
+				}
+			})
+			addComponents(centerComponents)
+		}),
+		/**
 		 * Center Horizontal Byflex Bycontainer Plugin
 		 *
 		 * Produces
