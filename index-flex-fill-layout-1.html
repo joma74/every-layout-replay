@@ -135,7 +135,11 @@
 						<span class="ow-emphasis">step-*</span> container is applied only to
 						make those, being each a
 						<span class="ow-emphasis">flex-item</span> themselves, the same
-						height - regardless of it's natural size.
+						height. If there is either negative or postive space to be
+						distributed, then regardless of their individual natural size, after
+						distributing the space proportional to the specified flex factor,
+						the one with the maximal min-size dictates the effective size of the
+						others.
 					</p>
 				</div>
 				<div
