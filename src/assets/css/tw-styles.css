@@ -76,11 +76,13 @@
      * ************************************
      */
 
-	.tw-flex-h.tw-center-h-byflex-my {
+	.tw-flex-h.tw-center-h-byflex-my,
+	.tw-flex-v.tw-center-v-byflex-my {
 		align-items: center;
 	}
 
-	.tw-flex-h.tw-center-v-byflex-my {
+	.tw-flex-h.tw-center-v-byflex-my,
+	.tw-flex-v.tw-center-h-byflex-my {
 		justify-content: center;
 	}
 
@@ -99,7 +101,8 @@
      * ************************************
      */
 
-	.tw-flex-h.tw-center-h-bymar-my > * {
+	.tw-flex-h.tw-center-h-bymar-my > *,
+	.tw-flex-v.tw-center-h-bymar-my > * {
 		box-sizing: content-box;
 		max-height: max-content;
 		margin-left: auto;
@@ -110,14 +113,16 @@
 		text-align: center;
 	}
 
-	.tw-flex-h.tw-center-v-bymar-my > * {
+	.tw-flex-h.tw-center-v-bymar-my > *,
+	.tw-flex-v.tw-center-v-bymar-my > * {
 		box-sizing: content-box;
 		max-height: max-content;
 		margin-top: auto;
 		margin-bottom: auto;
 	}
 
-	.tw-flex-h.tw-center-vh-bymar-my > * {
+	.tw-flex-h.tw-center-vh-bymar-my > *,
+	.tw-flex-v.tw-center-vh-bymar-my > * {
 		box-sizing: content-box;
 		max-height: max-content;
 		margin-left: auto;
