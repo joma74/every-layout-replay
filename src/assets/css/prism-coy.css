@@ -20,7 +20,7 @@ pre[class*="language-"] {
 	/** FIX 
       * A max-width of 0 seems bogus, but a pre with white-space: pre and a parent of overflow: scroll 
       * will else take the element's natural width and the scroll/overflow will NOT kick in on the pre 
-      tag IFF a parent has a margin of auto. E.g. like tw-center-h-x.
+      tag IFF a parent has a margin of auto. E.g. like tw-center-y-*.
       */
 	max-width: 0;
 }
