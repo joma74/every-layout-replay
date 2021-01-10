@@ -51,6 +51,137 @@
 
 @layer components {
 	/** 
+     * Flex START
+     * *********************************
+     */
+	.tw-flex-h {
+		box-sizing: content-box;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tw-flex-v {
+		box-sizing: content-box;
+		display: flex;
+		flex-direction: row;
+	}
+
+	/** 
+     * Flex END
+     * *********************************
+     */
+
+	/** 
+     * Center Horizontal By Container START
+     * ************************************
+     */
+
+	.tw-flex-h.tw-center-h-byflex-my {
+		align-items: center;
+	}
+
+	.tw-flex-h.tw-center-v-byflex-my {
+		justify-content: center;
+	}
+
+	.tw-flex-h.tw-center-vh-byflex-my {
+		align-items: center;
+		justify-content: center;
+	}
+
+	/** 
+     * Center Horizontal By Container END
+     * ************************************
+     */
+
+	/** 
+     * Center Horizontal By Margin START
+     * ************************************
+     */
+
+	.tw-flex-h.tw-center-h-bymar-my > * {
+		box-sizing: content-box;
+		max-height: max-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.tw-flex-h.tw-center-h-bymar-my {
+		text-align: center;
+	}
+
+	.tw-flex-h.tw-center-v-bymar-my > * {
+		box-sizing: content-box;
+		max-height: max-content;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.tw-flex-h.tw-center-vh-bymar-my > * {
+		box-sizing: content-box;
+		max-height: max-content;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	/** 
+     * Center Horizontal By Margin END
+     * ************************************
+     */
+
+	/** 
+     * Center Horizontal By Margin START
+     * *********************************
+     */
+
+	.tw-center-h {
+		box-sizing: content-box;
+		max-width: max-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/** 
+     * Center Horizontal By Margin END
+     **/
+
+	/** 
+     * Center Vertical By Margin START
+     * *********************************
+     */
+
+	.tw-center-v {
+		box-sizing: content-box;
+		max-width: max-content;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	/** 
+     * Center Vertical By Margin END
+     **/
+
+	/** 
+     * Center Horizontal and Vertical By Margin START
+     * *********************************
+     */
+
+	.tw-center-vh {
+		box-sizing: content-box;
+		max-width: max-content;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	/** 
+     * Center Horizontal and Vertical By Margin END
+     **/
+
+	/** 
      * Stack By Flex START
      * ******************
      *

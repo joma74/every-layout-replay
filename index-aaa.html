@@ -3,33 +3,78 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - X</title>
+		<title>Every Layout - The Center, Horizontal, By Flex, By Margin</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
 	<body>
 		<div
-			class="tw-min-h-screen tw-box-8 tw-stack-byflex-grow-my tw-bg-white"
+			class="tw-min-h-screen tw-box-8 tw-stack-v-byflex-grow-my tw-bg-white"
 			id="container-passepartout"
 		>
 			<div
-				class="tw-center-h-0 tw-stack-6 tw-stack-byflex-grow-my tw-rounded tw-shadow-xl tw-bg-white"
+				class="tw-center-h-0 tw-stack-v-6 tw-stack-v-byflex-grow-my tw-rounded tw-shadow-xl tw-bg-white"
 				id="element-passepartout"
 			>
-				<div class="tw-stack-byflex-natural-me" id="description-example">
-					<h2>Every Layout - X, Example Y</h2>
+				<div class="tw-stack-v-byflex-natural-me" id="description-example">
+					<h2>Every Layout - The Center, Horizontal, By Flex, By Margin</h2>
 					<p>
-						An <span class="ow-code">ow-code</span>. A target link-with-pill
+						This serie shows how to horizontal center an element by applying a
+						<span class="ow-emphasis">flex box</span> on the parent element plus
+						applying <span class="ow-emphasis">margins</span> on the
+						<span class="ow-emphasis">flex items</span>.
+					</p>
+					<p>
+						The first example,
 						<span class="link-with-pill"
-							><a href="#usage-example">usage-example</a
-							><a href="#reset" style="right: -3ch">Reset</a> </span
-						>. An external link
-						<a
-							href="https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale"
-							target="_blank"
-							>Tailwind CSS spacing scale</a
-						>.
+							><a href="#center">center</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-h tw-center-h-bymar-my tw-p-4-my</span
+						>, hence the element shrinks to it's instrinsic content and leaving
+						application for the <span class="ow-emphasis">margins</span>, in
+						effect centering it's content.
+					</p>
+					<p>
+						The second example,
+						<span class="link-with-pill"
+							><a href="#minimal-container">minimal-container</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, additionally applies a <span class="ow-code">max-width</span> hint
+						of <span class="ow-code">max-content</span>, this time to the
+						container of the element defining the
+						<span class="ow-code">tw-flex-h tw-center-h-bymar-my tw-p-4-my</span
+						>. Hence the <span class="ow-code">p</span> does not expand, leaving
+						no application for the <span class="ow-emphasis">margins</span>.
+						Still, the paddings to the left and right remain.
+					</p>
+					<p>
+						The third example,
+						<span class="link-with-pill"
+							><a href="#sufficient-textonly">sufficient-textonly</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, just shows the minimal sufficent application of
+						<span class="ow-code">tw-flex-h tw-center-h-bymar-my tw-px-4</span>
+						for a text-only node. Note that as the content is a text node, the
+						padding must be applied on the element itself by
+						<span class="ow-code">tw-px-4</span>. And the centering works by
+						applying <span class="ow-code">text-align: center</span>.
+					</p>
+					<p>
+						The fourth example,
+						<span class="link-with-pill"
+							><a href="#sufficient-elmonly">sufficient-elmonly</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						, at last, just shows the minimal sufficent application of
+						<span class="ow-code"
+							>tw-flex-h tw-center-h-bymar-my tw-p-4-my</span
+						>
+						for a element-only node.
 					</p>
 					<div id="code-example">
 						<p class="tw-text-red-600">
@@ -42,11 +87,63 @@
 						</p>
 					</div>
 					<p class="tw-text-blueGray-400">
-						An <span class="ow-emphasis">ow-emphasis</span>
+						In the first and second example, the element defining the
+						<span class="ow-code"
+							>tw-flex-h tw-center-h-bymar-my tw-p-4-my</span
+						>
+						is colored with <span class="ow-code">tw-bg-purple-400</span>. It's
+						container is colored with
+						<span class="ow-code">tw-bg-yellow-100</span> - but because how the
+						margins work inside a <span class="ow-emphasis">flex box</span>,
+						this container is not visible. The content element is colored with
+						<span class="ow-code">tw-bg-blue-500</span>. To show these colored
+						effects, the DOM of these examples is contrived into multiple HTML
+						elements. In practice, just a single element with
+						<span class="ow-code">tw-flex-h tw-center-h-bymar-my</span> would be
+						sufficient - this is what the third and fourth example shows.
 					</p>
 				</div>
-				<div class="tw-box-4" id="usage-example" for-code-example>
-					<p class="tw-center-h-4" for-code-example>A usage example</p>
+				<div class="tw-stack-v-6" id="usage-example" for-code-example>
+					<div class="tw-bg-yellow-100" id="center" for-code-example>
+						<div
+							class="tw-flex-h tw-center-h-bymar-my tw-p-4-my tw-bg-purple-400"
+							for-code-example
+						>
+							<p class="tw-bg-blue-500 tw-bg-clip-content" for-code-example>
+								Instrinsic Center
+							</p>
+						</div>
+					</div>
+					<div
+						class="tw-bg-yellow-100 tw-max-w-max"
+						id="minimal-container"
+						for-code-example
+					>
+						<div
+							class="tw-flex-h tw-center-h-bymar-my tw-p-4-my tw-bg-purple-400"
+							for-code-example
+						>
+							<p class="tw-bg-blue-500 tw-bg-clip-content" for-code-example>
+								Shrinked Container
+							</p>
+						</div>
+					</div>
+					<div
+						class="tw-flex-h tw-center-h-bymar-my tw-px-4 tw-bg-clip-content"
+						id="sufficient-textonly"
+						for-code-example
+					>
+						A sufficient text-only example
+					</div>
+					<div
+						class="tw-flex-h tw-center-h-bymar-my tw-p-4-my"
+						id="sufficient-elmonly"
+						for-code-example
+					>
+						<span class="tw-bg-clip-content"
+							>A sufficient elm-only example</span
+						>
+					</div>
 				</div>
 			</div>
 		</div>

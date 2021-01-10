@@ -76,7 +76,75 @@ module.exports = {
 				},
 			}
 			addComponents([boxElementsBorder, boxElementsSameColor, ...boxParents])
-		}), // @ts-ignore
+		}),
+		/**
+		 * In Center Pad Horizonzal And Vertical My Plugin
+		 *
+		 * Produces
+		 * ```
+		 *  .tw-center-h-byflex-my.tw-p-4 > *, .tw-center-h-bymar-my.tw-p-4 > * {
+		 *      padding-left: 1rem;
+		 *      padding-right: 1rem;
+		 *  }
+		 *  .tw-center-v-byflex-my.tw-p-4 > *, .tw-center-v-bymar-my.tw-p-4 > * {
+		 *      padding-top: 1rem;
+		 *      padding-bottom: 1rem;
+		 *  }
+		 * 	.tw-center-vh-byflex-my.tw-p-4 > *, .tw-center-vh-bymar-my.tw-p-4 > * {
+		 *      padding-left: 1rem;
+		 *      padding-right: 1rem;
+		 *      padding-top: 1rem;
+		 *      padding-bottom: 1rem;
+		 *  }
+		 * ```
+		 * for each value of config("theme.spacing")
+		 *
+		 * For the spacing scale, see
+		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+		 */ plugin(function ({ addComponents, e, prefix, config }) {
+			const centerHComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-h-byflex-my`)}`)}.${prefix(
+						`${e(`p-${key}-my`)} > *`,
+					)}, .${prefix(`${e(`center-h-bymar-my`)}`)}.${prefix(
+						`${e(`p-${key}-my`)} > *`,
+					)}`]: {
+						"padding-left": `${value}`,
+						"padding-right": `${value}`,
+					},
+				}
+			})
+			const centerVComponents = _.map(config("theme.spacing"), (value, key) => {
+				return {
+					[`.${prefix(`${e(`center-v-byflex-my`)}`)}.${prefix(
+						`${e(`p-${key}-my`)} > *`,
+					)}, .${prefix(`${e(`center-v-bymar-my`)}`)}.${prefix(
+						`${e(`p-${key}-my`)} > *`,
+					)}`]: {
+						"padding-top": `${value}`,
+						"padding-bottom": `${value}`,
+					},
+				}
+			})
+			const centerVHComponents = _.map(
+				config("theme.spacing"),
+				(value, key) => {
+					return {
+						[`.${prefix(`${e(`center-vh-byflex-my`)}`)}.${prefix(
+							`${e(`p-${key}-my`)}`,
+						)}, .${prefix(`${e(`center-vh-bymar-my`)}`)}.${prefix(
+							`${e(`p-${key}-my`)} > *`,
+						)}`]: {
+							"padding-left": `${value}`,
+							"padding-right": `${value}`,
+							"padding-top": `${value}`,
+							"padding-bottom": `${value}`,
+						},
+					}
+				},
+			)
+			addComponents([centerHComponents, centerVComponents, centerVHComponents])
+		}),
 		/**
 		 * Center Horizontal By Margins Plugin
 		 *

@@ -32,10 +32,12 @@
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						shows an application of
-						<span class="ow-code">tw-center-h-byflex-bycon-4</span>, hence the
-						element shrinks to it's instrinsic content and leaving application
-						for the flex of <span class="ow-code">align-items: center</span>, in
-						effect centering it's content.
+						<span class="ow-code"
+							>tw-flex-h tw-center-h-byflex-my tw-p-4-my</span
+						>, hence the element shrinks to it's instrinsic content and leaving
+						application for the flex of
+						<span class="ow-code">align-items: center</span>, in effect
+						centering it's content.
 					</p>
 					<p>
 						The second example,
@@ -46,9 +48,10 @@
 						, additionally applies a <span class="ow-code">max-width</span> hint
 						of <span class="ow-code">max-content</span>, this time to the
 						container of the element defining the
-						<span class="ow-code">tw-center-h-byflex-bycon-4</span>. Hence the
-						<span class="ow-code">p</span> does not expand, leaving no
-						application for the flex of
+						<span class="ow-code"
+							>tw-flex-h tw-center-h-byflex-my tw-p-4-my</span
+						>. Hence the <span class="ow-code">p</span> does not expand, leaving
+						no application for the flex of
 						<span class="ow-code">align-items: center</span>. Still, the
 						paddings to the left and right remain.
 					</p>
@@ -59,7 +62,7 @@
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						, just shows the minimal sufficent application of
-						<span class="ow-code">tw-center-h-byflex-bycon-4</span> for a
+						<span class="ow-code">tw-flex-h tw-center-h-byflex-my</span> for a
 						text-only node.
 					</p>
 					<p>
@@ -69,7 +72,7 @@
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						, at last, just shows the minimal sufficent application of
-						<span class="ow-code">tw-center-h-byflex-bycon-4</span> for a
+						<span class="ow-code">tw-flex-h tw-center-h-byflex-my</span> for a
 						element-only node.
 					</p>
 					<div id="code-example">
@@ -98,10 +101,12 @@
 				<div class="tw-stack-v-6" id="usage-example" for-code-example>
 					<div class="tw-bg-yellow-100" id="center" for-code-example>
 						<div
-							class="tw-center-h-byflex-bycon-4 tw-bg-purple-400"
+							class="tw-flex-h tw-center-h-byflex-my tw-p-4-my tw-bg-purple-400"
 							for-code-example
 						>
-							<p class="tw-bg-blue-500" for-code-example>Instrinsic Center</p>
+							<p class="tw-bg-clip-content tw-bg-blue-500" for-code-example>
+								Instrinsic Center
+							</p>
 						</div>
 					</div>
 					<div
@@ -110,25 +115,29 @@
 						for-code-example
 					>
 						<div
-							class="tw-center-h-byflex-bycon-4 tw-bg-purple-400"
+							class="tw-flex-h tw-center-h-byflex-my tw-p-4-my tw-bg-purple-400"
 							for-code-example
 						>
-							<p class="tw-bg-blue-500" for-code-example>Minimal Container</p>
+							<p class="tw-bg-clip-content tw-bg-blue-500" for-code-example>
+								Minimal Container
+							</p>
 						</div>
 					</div>
 					<div
-						class="tw-center-h-byflex-bycon-4"
+						class="tw-flex-h tw-center-h-byflex-my tw-px-4"
 						id="sufficient-textonly"
 						for-code-example
 					>
 						A sufficient text-only example
 					</div>
 					<div
-						class="tw-center-h-byflex-bycon-4"
+						class="tw-flex-h tw-center-h-byflex-my tw-p-4-my"
 						id="sufficient-elmonly"
 						for-code-example
 					>
-						<span for-code-example>A sufficient elm-only example</span>
+						<span class="tw-bg-clip-content" for-code-example
+							>A sufficient elm-only example</span
+						>
 					</div>
 				</div>
 			</div>
