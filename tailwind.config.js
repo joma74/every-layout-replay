@@ -131,7 +131,7 @@ module.exports = {
 				(value, key) => {
 					return {
 						[`.${prefix(`${e(`center-vh-byflex-my`)}`)}.${prefix(
-							`${e(`p-${key}-my`)}`,
+							`${e(`p-${key}-my`)} > *`,
 						)}, .${prefix(`${e(`center-vh-bymar-my`)}`)}.${prefix(
 							`${e(`p-${key}-my`)} > *`,
 						)}`]: {

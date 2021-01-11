@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Every Layout - The Center, Vertical, By Margins</title>
+		<title>
+			Every Layout - The Center, Vertical And Horizontal, By Flex, By Container
+		</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
@@ -18,18 +20,94 @@
 				id="element-passepartout"
 			>
 				<div class="tw-stack-v-byflex-natural-me" id="description-example">
-					<h2>Every Layout The Center, Vertical, By Margins</h2>
+					<h2>
+						Every Layout - The Center, Vertical And Horizontal, By Flex, By
+						Container
+					</h2>
 					<p>
-						An <span class="ow-code">ow-code</span>. A target link-with-pill
+						This serie shows how to horizontal and vertical center elements by
+						applying
+						<span class="ow-emphasis">alignments</span> to a
+						<span class="ow-emphasis">flex box</span> and either distribute them
+						evenly or uniform.
+					</p>
+					<p>
 						<span class="link-with-pill"
-							><a href="#usage-example">usage-example</a
-							><a href="#reset" style="right: -3ch">Reset</a> </span
-						>. An external link
-						<a
-							href="https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale"
-							target="_blank"
-							>Tailwind CSS spacing scale</a
-						>.
+							><a href="#1-h-center-vh">1-h-center-vh</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-h tw-center-vh-byflex-my</span>on the
+						container of a button, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">column</span>.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#2-v-center-vh">2-v-center-vh</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-v tw-center-vh-byflex-my</span>on the
+						container of a button, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">row</span>.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#3-h-center-vh-uniform">3-h-center-vh-uniform</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-h tw-center-vh-byflex-my</span>on the
+						container of two buttons, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">row</span>. To distribute the buttons
+						uniform along the v line, a class of
+						<span class="ow-code">tw-v-dist-uniform-my</span> is applied on the
+						container.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#4-h-center-vh-evenly">4-h-center-vh-evenly</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-h tw-center-h-byflex-my</span>on the
+						container of two buttons, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">row</span>. To distribute the buttons
+						evenly along the v line, a class of
+						<span class="ow-code">tw-dist-v-evenly-my</span> is applied on the
+						container.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#5-v-center-vh-uniform">5-v-center-vh-uniform</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-v tw-center-vh-byflex-my</span>on the
+						container of two buttons, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">column</span>. To distribute the buttons
+						uniform along the v line, a class of
+						<span class="ow-code">tw-v-dist-uniform-my</span> is applied on the
+						container.
+					</p>
+					<p>
+						<span class="link-with-pill"
+							><a href="#6-v-center-h-evenly">6-v-center-h-evenly</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-v tw-center-v-byflex-my</span>on the
+						container of two buttons, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">column</span>. To distribute the buttons
+						evenly along the v line, a class of
+						<span class="ow-code">tw-dist-v-evenly-my</span> is applied on the
+						container.
 					</p>
 					<div id="code-example">
 						<p class="tw-text-red-600">
@@ -42,56 +120,127 @@
 						</p>
 					</div>
 					<p class="tw-text-blueGray-400">
-						An <span class="ow-emphasis">ow-emphasis</span>
+						A class of <span class="ow-code">tw-flex-1</span> on each example is
+						applied only to make those, being each a
+						<span class="ow-emphasis">flex-item</span> themselves, the same
+						height. If there is either negative or postive space to be
+						distributed, then regardless of their individual natural size, after
+						distributing the space proportional to the specified flex factor,
+						the one with the maximal min-size dictates the effective size of the
+						others.
 					</p>
 				</div>
 				<div
-					class="tw-stack-v-6 tw-stack-v-byflex-grow-my"
+					class="tw-stack-v-6 tw-flex-h tw-flex-grow"
+					style="min-height: 46rem"
 					id="usage-example"
 					for-code-example
 				>
 					<div
-						class="tw-stack-v-byflex-grow-my tw-bg-yellow-100"
-						id="center"
+						class="tw-flex-h tw-center-vh-byflex-my tw-bg-yellow-100 tw-flex-1"
+						id="1-h-center-vh"
 						for-code-example
 					>
-						<div
-							class="tw-center-h-4 tw-center-v-byflex-bymar-4 tw-bg-purple-400"
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
 							for-code-example
 						>
-							<button
-								class="tw-center-v-byflex-bymar-principal ow-button-modern-base ow-button-modern-secondary tw-bg-clip-padding"
-								type="button"
-								for-code-example
-							>
-								Press Me
-							</button>
-						</div>
+							VH in H
+						</button>
 					</div>
 					<div
-						class="tw-stack-v-byflex-grow-my tw-bg-yellow-100"
-						id="center"
+						class="tw-flex-v tw-center-vh-byflex-my tw-bg-yellow-100 tw-flex-1"
+						id="2-v-center-vh"
 						for-code-example
 					>
-						<div
-							class="tw-center-h-4 tw-center-v-byflex-bymar-4 tw-bg-purple-400"
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
 							for-code-example
 						>
-							<button
-								class="tw-center-v-byflex-bymar-principal ow-button-modern-base ow-button-modern-secondary tw-bg-clip-padding"
-								type="button"
-								for-code-example
-							>
-								Secondary Action
-							</button>
-							<button
-								class="tw-center-v-byflex-bymar-principal ow-button-modern-base ow-button-modern-primary tw-bg-clip-padding"
-								type="button"
-								for-code-example
-							>
-								Primary Action
-							</button>
-						</div>
+							VH in V
+						</button>
+					</div>
+					<div
+						class="tw-flex-h tw-center-vh-byflex-my tw-dist-v-uniform-my tw-bg-yellow-100 tw-flex-1"
+						id="3-h-center-vh-uniform"
+						for-code-example
+					>
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
+							for-code-example
+						>
+							Uniform V-Wise
+						</button>
+						<button
+							class="ow-button-modern-base ow-button-modern-primary"
+							type="button"
+							for-code-example
+						>
+							Uniform V-Wise
+						</button>
+					</div>
+					<div
+						class="tw-flex-h tw-center-h-byflex-my tw-dist-v-evenly-my tw-bg-yellow-100 tw-flex-1"
+						id="4-h-center-vh-evenly"
+						for-code-example
+					>
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
+							for-code-example
+						>
+							Evenly V-Wise
+						</button>
+						<button
+							class="ow-button-modern-base ow-button-modern-primary"
+							type="button"
+							for-code-example
+						>
+							Evenly V-Wise
+						</button>
+					</div>
+					<div
+						class="tw-flex-v tw-center-vh-byflex-my tw-dist-h-uniform-my tw-bg-yellow-100 tw-flex-1"
+						id="5-v-center-vh-uniform"
+						for-code-example
+					>
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
+							for-code-example
+						>
+							Uniform H-Wise
+						</button>
+						<button
+							class="ow-button-modern-base ow-button-modern-primary"
+							type="button"
+							for-code-example
+						>
+							Uniform H-Wise
+						</button>
+					</div>
+					<div
+						class="tw-flex-v tw-center-v-byflex-my tw-dist-h-evenly-my tw-bg-yellow-100 tw-flex-1"
+						id="6-v-center-h-evenly"
+						for-code-example
+					>
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
+							for-code-example
+						>
+							Evenly H-Wise
+						</button>
+						<button
+							class="ow-button-modern-base ow-button-modern-primary"
+							type="button"
+							for-code-example
+						>
+							Evenly H-Wise
+						</button>
 					</div>
 				</div>
 			</div>

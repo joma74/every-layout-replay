@@ -51,7 +51,7 @@
 
 @layer components {
 	/** 
-     * Flex START
+     * Flex With Direction START
      * *********************************
      */
 	.tw-flex-h {
@@ -67,7 +67,22 @@
 	}
 
 	/** 
-     * Flex END
+     * Flex With Direction END
+     * *********************************
+     */
+
+	/** 
+     * Flex Distribute Evenly START
+     * *********************************
+     */
+
+	.tw-flex-h.tw-dist-v-evenly-my,
+	.tw-flex-v.tw-dist-h-evenly-my {
+		justify-content: space-evenly;
+	}
+
+	/** 
+     * Flex Distribute Evenly END
      * *********************************
      */
 
@@ -86,7 +101,8 @@
 		justify-content: center;
 	}
 
-	.tw-flex-h.tw-center-vh-byflex-my {
+	.tw-flex-h.tw-center-vh-byflex-my,
+	.tw-flex-v.tw-center-vh-byflex-my {
 		align-items: center;
 		justify-content: center;
 	}
@@ -102,7 +118,10 @@
      */
 
 	.tw-flex-h.tw-center-h-bymar-my > *,
-	.tw-flex-v.tw-center-h-bymar-my > * {
+	.tw-flex-v.tw-center-h-bymar-my > *,
+	.tw-flex-h.tw-dist-h-uniform-my > *,
+	.tw-flex-v.tw-dist-h-uniform-my > *,
+	.tw-center-h-bymar-me {
 		box-sizing: content-box;
 		max-height: max-content;
 		margin-left: auto;
@@ -114,7 +133,10 @@
 	}
 
 	.tw-flex-h.tw-center-v-bymar-my > *,
-	.tw-flex-v.tw-center-v-bymar-my > * {
+	.tw-flex-v.tw-center-v-bymar-my > *,
+	.tw-flex-h.tw-dist-v-uniform-my > *,
+	.tw-flex-v.tw-dist-v-uniform-my > *,
+	.tw-center-v-bymar-me {
 		box-sizing: content-box;
 		max-height: max-content;
 		margin-top: auto;
@@ -122,7 +144,8 @@
 	}
 
 	.tw-flex-h.tw-center-vh-bymar-my > *,
-	.tw-flex-v.tw-center-vh-bymar-my > * {
+	.tw-flex-v.tw-center-vh-bymar-my > *,
+	.tw-center-vh-bymar-me {
 		box-sizing: content-box;
 		max-height: max-content;
 		margin-left: auto;
