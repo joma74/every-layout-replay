@@ -71,7 +71,7 @@
 
 	/** 
      * Distribute ANY In Flex START
-     * ************************************
+     * ****************************
      */
 
 	.tw-flex-h.tw-dist-v-evenly-my,
@@ -81,12 +81,12 @@
 
 	/** 
      * Distribute ANY END
-     * *********************************
+     * ******************
      */
 
 	/** 
-     * Center Horizontal By Container In Flex START
-     * ********************************************
+     * Center Horizontal And/Or Vertical By Container In Flex START
+     * ************************************************************
      */
 
 	.tw-flex-h.tw-center-h-byflex-my,
@@ -106,13 +106,20 @@
 	}
 
 	/** 
-     * Center Horizontal By Container In Flex END
-     * ******************************************
+     * Center Horizontal And/Or Vertical By Container In Flex END
+     * **********************************************************
      */
 
 	/** 
-     * Center Horizontal By Margin In Flex START
-     * *****************************************
+     * Center Horizontal And/Or Vertical By Margin In Flex START
+     * *********************************************************
+     * https://every-layout.dev/layouts/center/ 
+     * Why box-sizing: content-box? -> Minimum "margin"!  
+     * ! -> In a context narrower than measure-cap, the contents 
+     * will currently be flush with either side of the parent 
+     * element or viewport. 
+     * Rather than letting this happen, we should ensure a 
+     * minimum space on either side.
      */
 
 	.tw-flex-h.tw-center-h-bymar-my > *,
@@ -153,8 +160,8 @@
 	}
 
 	/** 
-     * Center Horizontal By Margin In Flex END
-     * ***************************************
+     * Center Horizontal And/Or Vertical By Margin In Flex END
+     * *******************************************************
      */
 
 	/** 
@@ -190,8 +197,8 @@
      **/
 
 	/** 
-     * Center Horizontal and Vertical By Margin START
-     * *********************************
+     * Center Horizontal And Vertical By Margin START
+     * *********************************************
      */
 
 	.tw-center-vh {
@@ -204,7 +211,7 @@
 	}
 
 	/** 
-     * Center Horizontal and Vertical By Margin END
+     * Center Horizontal And Vertical By Margin END
      **/
 
 	/** 
