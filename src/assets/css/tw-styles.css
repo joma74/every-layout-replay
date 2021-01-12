@@ -52,7 +52,7 @@
 @layer components {
 	/** 
      * Flex With Direction START
-     * *********************************
+     * *************************
      */
 	.tw-flex-h {
 		display: flex;
@@ -66,12 +66,12 @@
 
 	/** 
      * Flex With Direction END
-     * *********************************
+     * ***********************
      */
 
 	/** 
-     * Flex Distribute Evenly START
-     * *********************************
+     * Distribute Evenly In Flex START
+     * ************************************
      */
 
 	.tw-flex-h.tw-dist-v-evenly-my,
@@ -80,13 +80,13 @@
 	}
 
 	/** 
-     * Flex Distribute Evenly END
+     * Distribute Evenly END
      * *********************************
      */
 
 	/** 
-     * Center Horizontal By Container START
-     * ************************************
+     * Center Horizontal By Container In Flex START
+     * ********************************************
      */
 
 	.tw-flex-h.tw-center-h-byflex-my,
@@ -106,13 +106,13 @@
 	}
 
 	/** 
-     * Center Horizontal By Container END
-     * ************************************
+     * Center Horizontal By Container In Flex END
+     * ******************************************
      */
 
 	/** 
-     * Center Horizontal By Margin START
-     * ************************************
+     * Center Horizontal By Margin In Flex START
+     * *****************************************
      */
 
 	.tw-flex-h.tw-center-h-bymar-my > *,
@@ -153,8 +153,8 @@
 	}
 
 	/** 
-     * Center Horizontal By Margin END
-     * ************************************
+     * Center Horizontal By Margin In Flex END
+     * ***************************************
      */
 
 	/** 
@@ -175,7 +175,7 @@
 
 	/** 
      * Center Vertical By Margin START
-     * *********************************
+     * *******************************
      */
 
 	.tw-center-v {
@@ -208,9 +208,11 @@
      **/
 
 	/** 
-     * Flex Grow Shrink Natural Me My START
-     * ************************************
+     * Grow Shrink Natural Me My In Flex START
+     * ***************************************
      **/
+
+	/** Just Grow My */
 
 	.tw-flex-grow-my > * {
 		@apply tw-flex-grow-me;
@@ -222,6 +224,26 @@
 
 	.tw-flex-natural-my > * {
 		@apply tw-flex-natural-me;
+	}
+
+	/** Flex and Grow My */
+
+	.tw-flex-h-grow-my {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tw-flex-h-grow-my > * {
+		@apply tw-flex-grow-me;
+	}
+
+	.tw-flex-v-grow-my {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.tw-flex-v-grow-my > * {
+		@apply tw-flex-grow-me;
 	}
 
 	/**
@@ -249,20 +271,8 @@
 		flex-shrink: 0 !important;
 	}
 
-	.tw-flex-v-grow-my > * {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-	}
-
-	.tw-flex-h-grow-my > * {
-		display: flex;
-		flex-direction: row;
-		flex-grow: 1;
-	}
-
 	/** 
-     * Flex Grow Shrink Natural Me My END
+     * Flex Grow Shrink Natural Me My In Flex END
      **/
 
 	/** 
