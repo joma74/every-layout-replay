@@ -78,19 +78,19 @@ module.exports = {
 			addComponents([boxElementsBorder, boxElementsSameColor, ...boxParents])
 		}),
 		/**
-		 * In Center Pad Horizonzal And Vertical My Plugin
+		 * In Center Pad Horizonzal And/Or Vertical My Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-center-h-byflex-my.tw-p-4 > *, .tw-center-h-bymar-my.tw-p-4 > * {
+		 *  .tw-center-h-byflex-my.tw-p-4-my > *, .tw-center-h-bymar-my.tw-p-4-my > * {
 		 *      padding-left: 1rem;
 		 *      padding-right: 1rem;
 		 *  }
-		 *  .tw-center-v-byflex-my.tw-p-4 > *, .tw-center-v-bymar-my.tw-p-4 > * {
+		 *  .tw-center-v-byflex-my.tw-p-4-my > *, .tw-center-v-bymar-my.tw-p-4-my > * {
 		 *      padding-top: 1rem;
 		 *      padding-bottom: 1rem;
 		 *  }
-		 * 	.tw-center-vh-byflex-my.tw-p-4 > *, .tw-center-vh-bymar-my.tw-p-4 > * {
+		 * 	.tw-center-vh-byflex-my.tw-p-4-my > *, .tw-center-vh-bymar-my.tw-p-4-my > * {
 		 *      padding-left: 1rem;
 		 *      padding-right: 1rem;
 		 *      padding-top: 1rem;
@@ -144,234 +144,6 @@ module.exports = {
 				},
 			)
 			addComponents([centerHComponents, centerVComponents, centerVHComponents])
-		}),
-		/**
-		 * Center Horizontal By Margins Plugin
-		 *
-		 * Produces
-		 * ```
-		 *  .tw-center-h-4 {
-		 *      box-sizing: content-box;
-		 *      max-width: max-content;
-		 *      margin-left: auto;
-		 *      margin-right: auto;
-		 *      padding-left: 1rem;
-		 *      padding-right: 1rem;
-		 *  }
-		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 */ plugin(function ({ addComponents, e, prefix, config }) {
-			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
-				return {
-					[`.${prefix(`${e(`center-h-${key}`)}`)}`]: {
-						"box-sizing": "content-box",
-						"max-width": "max-content",
-						"margin-left": "auto",
-						"margin-right": "auto",
-						"padding-left": `${value}`,
-						"padding-right": `${value}`,
-					},
-				}
-			})
-			addComponents(centerComponents)
-		}),
-		/**
-		 * Center Vertical By Margins Plugin
-		 *
-		 * Produces
-		 * ```
-		 *  .tw-center-v-4 {
-		 *      box-sizing: content-box;
-		 *      max-height: max-content;
-		 *      margin-top: auto;
-		 *      margin-bottom: auto;
-		 *      padding-top: 1rem;
-		 *      padding-bottom: 1rem;
-		 *  }
-		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 */ plugin(function ({ addComponents, e, prefix, config }) {
-			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
-				return {
-					[`.${prefix(`${e(`center-v-${key}`)}`)}`]: {
-						"box-sizing": "content-box",
-						"max-height": "max-content",
-						"margin-top": "auto",
-						"margin-bottom": "auto",
-						"padding-top": `${value}`,
-						"padding-bottom": `${value}`,
-					},
-				}
-			})
-			addComponents(centerComponents)
-		}),
-		/**
-		 * Center Horizontal Byflex Bycontainer Plugin
-		 *
-		 * Produces
-		 * ```
-		 *  .tw-center-h-byflex-bycon-4 {
-		 *      box-sizing: content-box;
-		 *      display: flex;
-		 *      flex-direction: column;
-		 *      align-items: center;
-		 *      padding-left: 1rem;
-		 *      padding-right: 1rem;
-		 *  }
-		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 */ plugin(function ({ addComponents, e, prefix, config }) {
-			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
-				return {
-					[`.${prefix(`${e(`center-h-byflex-bycon-${key}`)}`)}`]: {
-						"box-sizing": "content-box",
-						display: "flex",
-						"flex-direction": "column",
-						"align-items": "center",
-						"padding-left": `${value}`,
-						"padding-right": `${value}`,
-					},
-				}
-			})
-			addComponents(centerComponents)
-		}),
-		/**
-		 * Center Horizontal Byflex Bymargin Plugin
-		 *
-		 * Produces
-		 * ```
-		 *  .tw-center-h-byflex-bymar-4 {
-		 *      box-sizing: content-box;
-		 *      display: flex;
-		 *      flex-direction: column;
-		 *      padding-left: 1rem;
-		 *      padding-right: 1rem;
-		 *      "text-align": "center"
-		 *  }
-		 *  [class*="tw-center-h-byflex-bymar] > * {
-		 *      margin-left: auto;
-		 *      margin-right: auto;
-		 *  }
-		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 */ plugin(function ({ addComponents, e, prefix, config }) {
-			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
-				return {
-					[`.${prefix(`${e(`center-h-byflex-bymar-${key}`)}`)}`]: {
-						"box-sizing": "content-box",
-						display: "flex",
-						"flex-direction": "column",
-						"padding-left": `${value}`,
-						"padding-right": `${value}`,
-						"text-align": "center" /*for text-only node*/,
-					},
-				}
-			})
-			const centerComponentElements = {
-				[`[class*="${prefix(`${e(`center-h-byflex-bymar`)}`)}"] > *`]: {
-					"margin-left": "auto",
-					"margin-right": "auto",
-				},
-			}
-			addComponents([centerComponents, centerComponentElements])
-		}),
-		/**
-		 * Center Vertical Byflex Bycontainer Plugin
-		 *
-		 * Produces
-		 * ```
-		 *  .tw-center-v-byflex-bycon-4 {
-		 *      box-sizing: content-box;
-		 *      display: flex;
-		 *      flex-direction: column;
-		 *      justify-content: center
-		 *      padding-top: 1rem;
-		 *      padding-bottom: 1rem;
-		 *  }
-		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 */ plugin(function ({ addComponents, e, prefix, config }) {
-			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
-				return {
-					[`.${prefix(`${e(`center-v-byflex-bycon-${key}`)}`)}`]: {
-						"box-sizing": "content-box",
-						display: "flex",
-						"flex-direction": "column",
-						"justify-content": "center",
-						"padding-top": `${value}`,
-						"padding-bottom": `${value}`,
-					},
-				}
-			})
-			addComponents(centerComponents)
-		}),
-		/**
-		 * Center Vertical Byflex Bymargin Plugin
-		 *
-		 * Produces
-		 * ```
-		 *  .tw-center-v-byflex-bymar-4 {
-		 *      box-sizing: content-box;
-		 *      display: flex;
-		 *      flex-direction: column;
-		 *      padding-top: 1rem;
-		 *      padding-bottom: 1rem;
-		 *  }
-		 *  [class*="tw-center-v-byflex-bymar-"] > .tw-center-v-byflex-bymar-principal {
-		 *      margin-top: auto;
-		 *      margin-bottom: auto;
-		 *   }
-		 * ```
-		 * for each value of config("theme.spacing")
-		 *
-		 * For the spacing scale, see
-		 * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
-		 */ plugin(function ({ addComponents, e, prefix, config }) {
-			const centerComponents = _.map(config("theme.spacing"), (value, key) => {
-				return {
-					[`.${prefix(`${e(`center-v-byflex-bymar-${key}`)}`)}`]: {
-						"box-sizing": "content-box",
-						display: "flex",
-						"flex-direction": "column",
-						"padding-top": `${value}`,
-						"padding-bottom": `${value}`,
-					},
-				}
-			})
-			let cssSelector = prefix(".center-v-byflex-bymar-").substr(1)
-			const centerComponentElements = {
-				[`[class^='${cssSelector}'] > .${prefix(
-					`${e(`center-v-byflex-bymar-principal`)}`,
-				)}, [class*=' ${cssSelector}'] > .${prefix(
-					`${e(`center-v-byflex-bymar-principal`)}`,
-				)}`]: {
-					"margin-top": "auto",
-					"margin-bottom": "auto",
-				},
-			}
-			// for a node only containing text
-			const centerMe = {
-				[`.${prefix(`${e(`center-v-byflex-bymar-me`)}`)}`]: {
-					"margin-top": "auto",
-					"margin-bottom": "auto",
-				},
-			}
-			addComponents([centerComponents, centerComponentElements, centerMe])
 		}),
 		/**
 		 * Stack Horizontal Plugin
@@ -430,7 +202,7 @@ module.exports = {
 		 * ```
 		 * Plus
 		 * ```
-		 *  .tw-flex-h.tw-dist-v-pull-up-my.tw-dist-spring-after > :nth-child(1), .tw-flex-v.tw-dist-h-pull-left-my.tw-dist-spring-after > :nth-child(1) {
+		 *  .tw-flex-h.tw-dist-v-pull-up-my.tw-dist-spring-after-2 > :nth-child(2), .tw-flex-v.tw-dist-h-pull-left-my.tw-dist-spring-after-2 > :nth-child(2) {
 		 *      margin-bottom: auto;
 		 *  }
 		 * ```
@@ -440,9 +212,9 @@ module.exports = {
 		// @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
 			const flexPullParents = {
-				[`.${prefix(`flex-h.tw-dist-v-pull-up-my`)}, .${prefix(
-					`flex-v.tw-dist-h-pull-left-my`,
-				)}`]: {
+				[`.${prefix(`flex-h`)}.${prefix(`dist-v-pull-up-my`)}, .${prefix(
+					`flex-v`,
+				)}.${prefix(`dist-h-pull-left-my`)}`]: {
 					"justify-content": "start",
 				},
 			}
