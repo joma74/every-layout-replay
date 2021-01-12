@@ -420,45 +420,46 @@ module.exports = {
 			addComponents(stackComponents)
 		}),
 		/**
-		 * Stack Vertical Byflex Pull-Up and Spring-After Plugin
+		 * Flex Pull Up or Pull Left and Spring-After Plugin
 		 *
 		 * Produces
 		 * ```
-		 *  .tw-stack-v-byflex-pull-up {
-		 *    display: flex;
-		 *    flex-direction: column;
-		 *    justify-content: start;
-		 *    }
+		 *  .tw-flex-h.tw-dist-v-pull-up-my, .tw-flex-v.tw-dist-h-pull-left-my  {
+		 *      justify-content: start;
+		 *  }
 		 * ```
 		 * Plus
 		 * ```
-		 *    .tw-stack-v-byflex-pull-up.tw-stack-v-byflex-spring-after-1 > :nth-child(1) {
-		 *    margin-bottom: auto;
-		 *    }
-		 *    ... for 1..4
+		 *  .tw-flex-h.tw-dist-v-pull-up-my.tw-dist-spring-after > :nth-child(1), .tw-flex-v.tw-dist-h-pull-left-my.tw-dist-spring-after > :nth-child(1) {
+		 *      margin-bottom: auto;
+		 *  }
 		 * ```
 		 * for each value of 1..4
 		 *
 		 */
 		// @ts-ignore
 		plugin(function ({ addComponents, e, prefix, config }) {
-			const stackSpringParent = {
-				".stack-v-byflex-pull-up": {
-					display: "flex",
-					"flex-direction": "column",
+			const flexPullParents = {
+				[`.${prefix(`flex-h.tw-dist-v-pull-up-my`)}, .${prefix(
+					`flex-v.tw-dist-h-pull-left-my`,
+				)}`]: {
 					"justify-content": "start",
 				},
 			}
-			const stackSpringElements = _.map([1, 2, 3, 4], (value) => {
+			const flexSpringElements = _.map([1, 2, 3, 4], (value) => {
 				return {
-					[`.${prefix(`stack-v-byflex-pull-up`)}.${prefix(
-						`${e(`stack-v-byflex-spring-after-${value}`)}`,
+					[`.${prefix(`flex-h`)}.${prefix(`dist-v-pull-up-my`)}.${prefix(
+						`${e(`dist-spring-after-${value}`)}`,
+					)} > :nth-child(${value}), .${prefix(`flex-v`)}.${prefix(
+						`dist-h-pull-left-my`,
+					)}.${prefix(
+						`${e(`dist-spring-after-${value}`)}`,
 					)} > :nth-child(${value})`]: {
 						"margin-bottom": "auto",
 					},
 				}
 			})
-			addComponents([stackSpringParent, ...stackSpringElements])
+			addComponents([flexPullParents, flexSpringElements])
 		}),
 	],
 }
