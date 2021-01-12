@@ -55,13 +55,11 @@
      * *********************************
      */
 	.tw-flex-h {
-		box-sizing: content-box;
 		display: flex;
 		flex-direction: column;
 	}
 
 	.tw-flex-v {
-		box-sizing: content-box;
 		display: flex;
 		flex-direction: row;
 	}
@@ -207,6 +205,64 @@
 
 	/** 
      * Center Horizontal and Vertical By Margin END
+     **/
+
+	/** 
+     * Flex Grow Shrink Natural Me My START
+     * ************************************
+     **/
+
+	.tw-flex-grow-my > * {
+		@apply tw-flex-grow-me;
+	}
+
+	.tw-flex-shrink-my > * {
+		@apply tw-flex-shrink-me;
+	}
+
+	.tw-flex-natural-my > * {
+		@apply tw-flex-natural-me;
+	}
+
+	/**
+     * Exception class for a flex container's element.
+     * Enables growing-only of the element itself. 
+     */
+	.tw-flex-grow-me {
+		flex-grow: 1 !important;
+	}
+
+	/**
+     * Exception class for a flex container's elements.
+     * Enables shrinking-only of the element itself. 
+     */
+	.tw-flex-shrink-me {
+		flex-shrink: 1 !important;
+	}
+
+	/**
+     * Exception class for a flex container's element.
+     * Enables growing-only of the element itself. 
+     */
+	.tw-flex-natural-me {
+		flex-grow: 0 !important;
+		flex-shrink: 0 !important;
+	}
+
+	.tw-flex-v-grow-my > * {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+	}
+
+	.tw-flex-h-grow-my > * {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
+
+	/** 
+     * Flex Grow Shrink Natural Me My END
      **/
 
 	/** 
