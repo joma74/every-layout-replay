@@ -369,8 +369,8 @@
      * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
      * see layer base.
      */
-	.tw-measure-cap-not-my > * {
-		@apply tw-measure-cap-not-me;
+	.tw-measure-natural-my > * {
+		@apply tw-measure-natural-me;
 	}
 
 	/**
@@ -378,7 +378,7 @@
      * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
      * see layer base.
      */
-	.tw-measure-cap-not-me {
+	.tw-measure-natural-me {
 		@apply tw-max-w-none;
 	}
 
@@ -387,19 +387,19 @@
      * The measure-cap rule this one exempts is applied as a global rule on specific elements, 
      * see layer base.
      */
-	.tw-measure-cap-not-memy {
-		@apply tw-measure-cap-not-me;
+	.tw-measure-natural-memy {
+		@apply tw-measure-natural-me;
 	}
 
 	/**
      * Exception class for not applying a measure cap on the container's elements and on the element itself.
      * Note that this @apply generates!
-     *  .tw-measure-cap-not-memy > * {
+     *  .tw-measure-natural-memy > * {
      *      max-width: none;
      *  }
      */
-	.tw-measure-cap-not-memy {
-		@apply tw-measure-cap-not-my;
+	.tw-measure-natural-memy {
+		@apply tw-measure-natural-my;
 	}
 
 	/**/
