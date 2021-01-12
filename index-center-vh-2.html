@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>
-			Every Layout - The Center, Vertical And Horizontal, By Margins
+			Every Layout - The Center, Vertical And Horizontal, By Flex, By Margin
 		</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
@@ -21,69 +21,89 @@
 			>
 				<div class="tw-stack-v-byflex-natural-me" id="description-example">
 					<h2>
-						Every Layout - The Center, Vertical And Horizontal, By Margins
+						Every Layout - The Center, Vertical And Horizontal, By Flex, By
+						Margin
 					</h2>
 					<p>
 						This serie shows how to horizontal and vertical center elements by
 						applying
-						<span class="ow-emphasis">margins</span> which are contained in a
-						<span class="ow-emphasis">flex box</span>.
+						<span class="ow-emphasis">margins</span> to a
+						<span class="ow-emphasis">flex box</span> and distribute them
+						uniform.
 					</p>
 					<p>
 						<span class="link-with-pill"
-							><a href="#1-center-v-h-flex-col">1-center-v-h-flex-col</a
+							><a href="#1-h-center-vh">1-h-center-vh</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						shows an application of
-						<span class="ow-code">tw-center-v-4</span> and
-						<span class="ow-code">tw-center-h-4</span> on a button, which is
-						contained in a <span class="ow-emphasis">flex box</span> oriented in
-						a <span class="ow-emphasis">direction</span> of
+						<span class="ow-code">tw-flex-h tw-center-vh-bymar-my</span>on the
+						container of a button, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
 						<span class="ow-emphasis">column</span>.
 					</p>
 					<p>
 						<span class="link-with-pill"
-							><a href="#2-center-v-h-flex-row">2-center-v-h-flex-row</a
+							><a href="#2-v-center-vh">2-v-center-vh</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						shows an application of
-						<span class="ow-code">tw-center-v-4</span> and
-						<span class="ow-code">tw-center-h-4</span> on a button, which is
-						contained in a <span class="ow-emphasis">flex box</span> oriented in
-						a <span class="ow-emphasis">direction</span> of
+						<span class="ow-code">tw-flex-h tw-center-vh-bymar-my</span>on the
+						container of a button, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
 						<span class="ow-emphasis">row</span>.
 					</p>
 					<p>
 						<span class="link-with-pill"
-							><a href="#3-center-v-h-flex-col">3-center-v-h-flex-col</a
+							><a href="#3-h-center-vh-uniform-fromcon"
+								>3-h-center-vh-uniform-fromcon</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						shows an application of
-						<span class="ow-code">tw-center-v-4</span> and
-						<span class="ow-code">tw-center-h-4</span> on two buttons, which are
-						contained in a <span class="ow-emphasis">flex box</span> oriented in
-						a <span class="ow-emphasis">direction</span> of
-						<span class="ow-emphasis">col</span>. Note that beacuse of the
+						<span class="ow-code">tw-flex-h tw-center-vh-bymar-my</span>on the
+						container of two buttons, which is oriented in a
 						<span class="ow-emphasis">direction</span> of
-						<span class="ow-emphasis">col</span> on the
-						<span class="ow-emphasis">flex box</span> container, the buttons are
-						arranged <span class="ow-emphasis">row wise</span>.
+						<span class="ow-emphasis">row</span>. The uniform distribution of
+						the buttons along the v line is an instrinsic effect of applying
+						<span class="ow-code">tw-center-vh-bymar-my</span> on the container.
+						<span class="link-with-pill"
+							><a href="#3-h-center-vh-uniform-fromelm"
+								>3-h-center-vh-uniform-fromelm</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-h</span>on the container of two
+						buttons, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">row</span>. The uniform distribution of
+						the buttons along the v line is an instrinsic effect of applying
+						<span class="ow-code">tw-center-vh</span> on each button element.
 					</p>
 					<p>
 						<span class="link-with-pill"
-							><a href="#4-center-v-h-flex-row">4-center-v-h-flex-row</a
+							><a href="#4-v-center-vh-uniform-fromcon"
+								>4-v-center-vh-uniform-fromcon</a
 							><a href="#reset" style="right: -3ch">Reset</a>
 						</span>
 						shows an application of
-						<span class="ow-code">tw-center-v-4</span> and
-						<span class="ow-code">tw-center-h-4</span> on two buttons, which are
-						contained in a <span class="ow-emphasis">flex box</span> oriented in
-						a <span class="ow-emphasis">direction</span> of
-						<span class="ow-emphasis">row</span>. Note that beacuse of the
+						<span class="ow-code">tw-flex-v tw-center-vh-bymar-my</span>on the
+						container of two buttons, which is oriented in a
 						<span class="ow-emphasis">direction</span> of
-						<span class="ow-emphasis">row</span> on the
-						<span class="ow-emphasis">flex box</span> container, the buttons are
-						arranged <span class="ow-emphasis">column wise</span>.
+						<span class="ow-emphasis">column</span>. The uniform distribution of
+						the buttons along the h line is an instrinsic effect of applying
+						<span class="ow-code">tw-center-vh-bymar-my</span> on the container.
+						<span class="link-with-pill"
+							><a href="#4-v-center-vh-uniform-fromelm"
+								>4-v-center-vh-uniform-fromelm</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						shows an application of
+						<span class="ow-code">tw-flex-v</span>on the container of two
+						buttons, which is oriented in a
+						<span class="ow-emphasis">direction</span> of
+						<span class="ow-emphasis">column</span>. The uniform distribution of
+						the buttons along the h line is an instrinsic effect of applying
+						<span class="ow-code">tw-center-vh</span> on each button element.
 					</p>
 					<div id="code-example">
 						<p class="tw-text-red-600">
@@ -96,9 +116,8 @@
 						</p>
 					</div>
 					<p class="tw-text-blueGray-400">
-						A class of <span class="ow-code">tw-flex-1</span> on each
-						<span class="ow-emphasis">step-*</span> container is applied only to
-						make those, being each a
+						A class of <span class="ow-code">tw-flex-1</span> on each example is
+						applied only to make those, being each a
 						<span class="ow-emphasis">flex-item</span> themselves, the same
 						height. If there is either negative or postive space to be
 						distributed, then regardless of their individual natural size, after
@@ -108,75 +127,115 @@
 					</p>
 				</div>
 				<div
-					class="tw-stack-v-6 tw-stack-v-byflex-grow-my"
-					style="min-height: 30rem"
+					class="tw-stack-v-6 tw-flex-h tw-flex-grow"
+					style="min-height: 46rem"
 					id="usage-example"
 					for-code-example
 				>
 					<div
-						class="tw-flex tw-flex-col tw-bg-yellow-100 tw-flex-1"
-						id="1-center-v-h-flex-col"
+						class="tw-flex-h tw-center-vh-bymar-my tw-bg-yellow-100 tw-flex-1"
+						id="1-h-center-vh"
 						for-code-example
 					>
 						<button
-							class="tw-center-v-4 tw-center-h-4 ow-button-modern-base ow-button-modern-secondary"
+							class="ow-button-modern-base ow-button-modern-secondary"
 							type="button"
 							for-code-example
 						>
-							Press Me
+							VH in H
 						</button>
 					</div>
 					<div
-						class="tw-flex tw-flex-row tw-bg-yellow-100 tw-flex-1"
-						id="2-center-v-h-flex-row"
+						class="tw-flex-v tw-center-vh-bymar-my tw-bg-yellow-100 tw-flex-1"
+						id="2-v-center-vh"
 						for-code-example
 					>
 						<button
-							class="tw-center-v-4 tw-center-h-4 ow-button-modern-base ow-button-modern-secondary"
+							class="ow-button-modern-base ow-button-modern-secondary"
 							type="button"
 							for-code-example
 						>
-							Press Me
+							VH in V
 						</button>
 					</div>
 					<div
-						class="tw-flex tw-flex-col tw-bg-yellow-100 tw-flex-1"
-						id="3-center-v-h-flex-col"
+						class="tw-flex-h tw-center-vh-bymar-my tw-bg-yellow-100 tw-flex-1"
+						id="3-h-center-vh-uniform-fromcon"
 						for-code-example
 					>
 						<button
-							class="tw-center-v-4 tw-center-h-4 ow-button-modern-base ow-button-modern-secondary"
+							class="ow-button-modern-base ow-button-modern-secondary"
 							type="button"
 							for-code-example
 						>
-							Press Me
+							Uniform V-Wise From Con
 						</button>
 						<button
-							class="tw-center-v-4 tw-center-h-4 ow-button-modern-base ow-button-modern-primary"
+							class="ow-button-modern-base ow-button-modern-primary"
 							type="button"
 							for-code-example
 						>
-							Press Me
+							Uniform V-Wise From Con
 						</button>
 					</div>
 					<div
-						class="tw-flex tw-flex-row tw-bg-yellow-100 tw-flex-1"
-						id="4-center-v-h-flex-row"
+						class="tw-flex-h tw-bg-yellow-100 tw-flex-1"
+						id="3-h-center-vh-uniform-fromelm"
 						for-code-example
 					>
 						<button
-							class="tw-center-h-4 tw-center-v-4 ow-button-modern-base ow-button-modern-secondary"
+							class="tw-center-vh ow-button-modern-base ow-button-modern-secondary"
 							type="button"
 							for-code-example
 						>
-							Press Me
+							Uniform V-Wise From Elm
 						</button>
 						<button
-							class="tw-center-h-4 tw-center-v-4 ow-button-modern-base ow-button-modern-primary"
+							class="tw-center-vh ow-button-modern-base ow-button-modern-primary"
 							type="button"
 							for-code-example
 						>
-							Press Me
+							Uniform V-Wise From Elm
+						</button>
+					</div>
+					<div
+						class="tw-flex-v tw-center-vh-bymar-my tw-bg-yellow-100 tw-flex-1"
+						id="4-v-center-vh-uniform-fromcon"
+						for-code-example
+					>
+						<button
+							class="ow-button-modern-base ow-button-modern-secondary"
+							type="button"
+							for-code-example
+						>
+							Uniform H-Wise From Con
+						</button>
+						<button
+							class="ow-button-modern-base ow-button-modern-primary"
+							type="button"
+							for-code-example
+						>
+							Uniform H-Wise From Con
+						</button>
+					</div>
+					<div
+						class="tw-flex-v tw-bg-yellow-100 tw-flex-1"
+						id="4-v-center-vh-uniform-fromelm"
+						for-code-example
+					>
+						<button
+							class="tw-center-vh ow-button-modern-base ow-button-modern-secondary"
+							type="button"
+							for-code-example
+						>
+							Uniform H-Wise From Element
+						</button>
+						<button
+							class="tw-center-vh ow-button-modern-base ow-button-modern-primary"
+							type="button"
+							for-code-example
+						>
+							Uniform H-Wise From Element
 						</button>
 					</div>
 				</div>
