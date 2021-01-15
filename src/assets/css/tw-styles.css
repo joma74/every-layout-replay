@@ -374,6 +374,32 @@
      * *****************
      */
 
+	.tw-sidebar-con {
+		flex-wrap: wrap;
+		margin: -0.5rem;
+	}
+
+	.tw-sidebar-con > * {
+		margin: 0.5rem;
+	}
+
+	.tw-sidebar-sidebar {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+
+	.tw-h-sidebar-non {
+		flex-basis: 0;
+		flex-grow: 999;
+		min-width: calc(50% - 1rem);
+	}
+
+	.tw-v-sidebar-non {
+		flex-basis: 0;
+		flex-grow: 999;
+		min-height: calc(50% - 1rem);
+	}
+
 	/** 
      * Workspace Area END
      **/
