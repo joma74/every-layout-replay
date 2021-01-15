@@ -11,11 +11,15 @@
 	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono tw-text-sm;
 }
 
-*[id="description-example"] {
+blockquote {
+	@apply tw-px-2 tw-pb-2 tw-bg-gray-100 tw-border-t-8 tw-border-blue-500 tw-italic;
+}
+
+#description-example {
 	@apply tw-text-blue-500 tw-border-2 tw-border-blueGray-300 tw-border-dashed tw-box-2 tw-stack-v-2;
 }
 
-*[id="description-example"] > h2 {
+#description-example > h2 {
 	@apply tw-font-bold;
 }
 
@@ -23,7 +27,7 @@
  * External Link hinted by an "external link" image displayed 
  * at the end of an element
  */
-*[id="description-example"] a[href^="http"] {
+#description-example a[href^="http"] {
 	@apply tw-pr-3;
 	background: url(/src/assets/img/external-link.png) no-repeat right top;
 	background-size: 0.75rem 0.75rem;
@@ -32,7 +36,7 @@
 /**
  * A simple Link
  */
-*[id="description-example"] a {
+#description-example a {
 	@apply tw-border-blueGray-300 tw-border-2 tw-px-1 tw-border-dashed;
 }
 

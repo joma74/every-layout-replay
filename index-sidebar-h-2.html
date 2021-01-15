@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sidebar, Horizontal then Vertical, Bug</title>
+	</head>
+	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
+	<body>
+		<div
+			class="tw-min-h-screen tw-box-8 tw-flex-h-grow-my tw-bg-white"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-center-h tw-stack-v-6 tw-flex-h-grow-my tw-rounded tw-shadow-xl tw-bg-white"
+				id="element-passepartout"
+			>
+				<div class="tw-flex-natural-me" id="description-example">
+					<h2>Sidebar, Horizontal then Vertical, Spec Bug</h2>
+					<p>
+						This serie shows a sidebar layout. A sidebar layout consists of two
+						elements, a sidebar and a non-sidebar. A specific constraint applies
+						between these two elements: the orientation of the two elements
+						changes, depending on a measurement of the sidebar in relation to
+						that of the non-sidebar. If that relation changes, then the
+						orientation changes.
+					</p>
+					<p>
+						In this serie, the sidebar layout is put into a flex container of
+						<span class="ow-code">tw-flex-h</span> plus being made
+						<span class="ow-emphasis">wrap-able</span>, where the dependent
+						measurement is the height.
+					</p>
+					<p>
+						In both examples, a and b, the container of the sidebar and
+						non-sidebar has a fixed measurement of
+						<span class="ow-code">height: 14rem; width: 35rem</span> and a
+						margin based on the
+						<a
+							href="https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale"
+							target="_blank"
+							>Tailwind CSS spacing scale</a
+						>
+						No. 2 (2 * 0,25rem = 0,5rem). The calculation formula of the
+						flex-basis, by which the relation of the measurement and hence the
+						orientation changes, is shown as text of Example a, respectively
+						inside of each sidebar and non-sidebar.
+					</p>
+					<p>
+						Now turning to the spec bug. The spec bug can be observed in
+						<span class="link-with-pill"
+							><a href="#a-2-sidebar-non">a-2-sidebar-non</a
+							><a href="#reset" style="right: -3ch">Reset</a>
+						</span>
+						. The element overflows it's flex container
+						<span class="link-with-pill"
+							><a href="#a-2-sidebar-con">a-2-sidebar-con</a
+							><a href="#reset" style="right: -3ch">Reset</a> </span
+						>, as soon as the sidebar is made taller in height than the
+						sidebar-non, hence wrapping occurs. As summarized in
+						<a href="https://stackoverflow.com/a/33899301" target="_blank"
+							>When flexbox items wrap in column mode, container does not grow
+							its width
+						</a>
+					</p>
+					<blockquote>
+						This looks like a fundamental deficiency in flex layout. A flex
+						container in column-direction will not expand to accommodate
+						additional columns.
+					</blockquote>
+					<div id="code-example">
+						<p class="tw-text-red-600">
+							This element will be replaced by any element iff a root element of
+							id <span class="ow-code">usage-example</span> exists and having an
+							attribute of <span class="ow-code">for-code-example</span>. Then
+							any node having an attribute of
+							<span class="ow-code">for-code-example</span> is selected,
+							formatted and highlighted here.
+						</p>
+					</div>
+					<p class="tw-text-blueGray-400">
+						The sidebar is colored
+						<span class="ow-code">tw-bg-blue-500</span>, while the non-sidebar
+						is colored <span class="ow-code">tw-bg-red-400</span>.In the example
+						b, additionally the margins are colored
+						<span class="ow-code">tw-bg-gray-300</span>, but no text is
+						contained.
+					</p>
+				</div>
+				<div
+					class="tw-box-4 tw-stack-v-10 tw-flex-h tw-center-h-byflex-my tw-text-gray-200"
+					id="usage-example"
+					for-code-example
+				>
+					<h2 class="tw-text-gray-700">Example a</h2>
+					<div class="tw-flex-h" id="a-1" for-code-example>
+						<div
+							class="tw-flex-h tw-sidebar-con tw-flex-grow"
+							style="height: 14rem; width: 35rem"
+							for-code-example
+						>
+							<div
+								class="tw-sidebar-sidebar tw-bg-blue-500"
+								style="flex-basis: 6rem"
+								for-code-example
+							>
+								a-1-sidebar
+								<span class="tw-block tw-font-mono tw-text-xs"
+									>14-6-2*0.5-2*0.5 = 6</span
+								>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+									quod! Sunt nobis excepturi maxime.
+								</p>
+							</div>
+							<div class="tw-v-sidebar-non tw-bg-red-400" for-code-example>
+								a-1-sidebar-non
+								<span class="tw-block tw-font-mono tw-text-xs"
+									>14-6-2*0.5-2*0.5 = 6 == 6 => no wrap
+								</span>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+									quod! Sunt nobis excepturi maxime.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="tw-flex-h" id="a-2" for-code-example>
+						<div
+							class="tw-flex-h tw-sidebar-con tw-flex-grow"
+							style="height: 14rem; width: 35rem"
+							id="a-2-sidebar-con"
+							for-code-example
+						>
+							<div
+								class="tw-sidebar-sidebar tw-bg-blue-500"
+								style="flex-basis: 6.1rem"
+								id="a-2-sidebar"
+								for-code-example
+							>
+								a-2-sidebar
+								<div class="tw-block tw-font-mono tw-text-xs">
+									12-6.1-2*0.5-2*0.5 = 5.9
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+									quod! Sunt nobis excepturi maxime.
+								</p>
+							</div>
+							<div
+								class="tw-v-sidebar-non tw-bg-red-400"
+								id="a-2-sidebar-non"
+								for-code-example
+							>
+								a-2-sidebar-non
+								<div class="tw-block tw-font-mono tw-text-xs">
+									12-5.9-2*0.5-2*0.5 = 6.1 > 5.9 => wrap
+								</div>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+									quod! Sunt nobis excepturi maxime.
+								</p>
+							</div>
+						</div>
+					</div>
+					<h2 class="tw-text-gray-700">Example b</h2>
+					<div class="tw-flex-h" id="b-1" for-code-example>
+						<div
+							class="tw-flex-h tw-sidebar-con tw-flex-grow tw-bg-gray-300"
+							style="height: 14rem; width: 35rem"
+							for-code-example
+						>
+							<div
+								class="tw-sidebar-sidebar tw-bg-blue-500"
+								style="flex-basis: 6rem"
+								for-code-example
+							></div>
+							<div
+								class="tw-v-sidebar-non tw-bg-red-400"
+								for-code-example
+							></div>
+						</div>
+					</div>
+					<div class="tw-flex-h" id="b-2" for-code-example>
+						<div
+							class="tw-flex-h tw-sidebar-con tw-flex-grow tw-bg-gray-300"
+							style="height: 14rem; width: 35rem"
+							for-code-example
+						>
+							<div
+								class="tw-sidebar-sidebar tw-bg-blue-500"
+								style="flex-basis: 6.1rem"
+								for-code-example
+							></div>
+							<div
+								class="tw-v-sidebar-non tw-bg-red-400"
+								for-code-example
+							></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
+	</body>
+</html>
