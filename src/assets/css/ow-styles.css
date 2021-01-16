@@ -11,8 +11,8 @@
 	@apply tw-inline-block tw-text-white tw-bg-blue-500 tw-px-1 tw-mx-1 tw-font-mono tw-text-sm;
 }
 
-blockquote {
-	@apply tw-px-2 tw-pb-2 tw-bg-gray-100 tw-border-t-8 tw-border-blue-500 tw-italic;
+ow-blockquote {
+	@apply tw-block tw-max-w-none tw-px-2 tw-pb-2 tw-bg-gray-100 tw-border-t-8 tw-border-blue-500 tw-italic tw-stack-v-4;
 }
 
 #description-example {
