@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sidebar, Horizontal then Vertical, Bug</title>
+		<title>Sidebar, Horizontal Then On Wrap Vertical, Spec Bug</title>
 	</head>
 	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
 	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
@@ -18,7 +18,7 @@
 				id="element-passepartout"
 			>
 				<div class="tw-flex-natural-me" id="description-example">
-					<h2>Sidebar, Horizontal then Vertical, Spec Bug</h2>
+					<h2>Sidebar, Horizontal Then On Wrap Vertical, Spec Bug</h2>
 					<p>
 						This serie shows a sidebar layout. A sidebar layout consists of two
 						elements, a sidebar and a non-sidebar. A specific constraint applies
@@ -60,7 +60,7 @@
 							><a href="#a-2-sidebar-con">a-2-sidebar-con</a
 							><a href="#reset" style="right: -3ch">Reset</a> </span
 						>, as soon as the sidebar is made taller in height than the
-						sidebar-non, hence wrapping occurs. As summarized in
+						sidebar-non, hence wrapping occurs. This is summarized in
 						<a href="https://stackoverflow.com/a/33899301" target="_blank"
 							>When flexbox items wrap in column mode, container does not grow
 							its width
@@ -77,6 +77,30 @@
 							additional columns.
 						</p>
 					</ow-blockquote>
+					<p>
+						And summarized also here
+						<a
+							href="https://github.com/philipwalton/flexbugs#flexbug-14"
+							target="_blank"
+							class="tw-max-w-none"
+							>Flexbug #14 Shrink-to-fit containers with flex-flow: column wrap
+							do not contain their items
+						</a>
+					</p>
+					<ow-blockquote>
+						<p>
+							When using flex-flow: column wrap, some browsers do not properly
+							size the container based on its content, and there is unwanted
+							overflow. Demo 14.1.a shows an example of this.
+						</p>
+					</ow-blockquote>
+					<p>
+						The only workaround is an application of
+						<span class="ow-code">writing-mode</span> in combination with
+						<span class="ow-code">flex: row</span>. But this workaround is not
+						applicable to this serie, as this sidebar layout is about wraping,
+						depending on the height measurements of the elements.
+					</p>
 					<div id="code-example">
 						<p class="tw-text-red-600">
 							This element will be replaced by any element iff a root element of
