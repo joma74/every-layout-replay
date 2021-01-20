@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Flex, Column Wrap, Spec Bug Workaround, Writing Mode. Not Working
+		</title>
+	</head>
+	<link href="src/assets/css/tw-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/ow-styles.css" rel="stylesheet" />
+	<link href="src/assets/css/prism-coy.css" rel="stylesheet" />
+	<body>
+		<div
+			class="tw-min-h-screen tw-box-8 tw-flex-h-grow-my tw-bg-white"
+			id="container-passepartout"
+		>
+			<div
+				class="tw-center-h tw-stack-v-6 tw-flex-h-grow-my tw-rounded tw-shadow-xl tw-bg-white"
+				id="element-passepartout"
+			>
+				<div class="tw-flex-natural-me" id="description-example">
+					<h2>
+						Flex, Column Wrap, Spec Bug Workaround, Writing Mode. Not Working
+					</h2>
+					<p>
+						This serie shows a flexbox of vertical orientation, where wrapping
+						is turned on. It is a follow up to the
+						<span class="ow-emphasis">
+							"Sidebar, Horizontal Then On Wrap Vertical, Spec Bug" serie
+						</span>
+						, where the sidebar pattern was ruled out because it is said that a
+						spec bug prevents proper implementation in all browsers.
+					</p>
+					<p>
+						As been said in the forums, an application of
+						<span class="ow-code"> writing-mode: vertical-lr </span> on the
+						container and a
+						<span class="ow-code"> writing-mode: horizontal-tb </span> on the
+						flex item should be a workaround. But it is not.
+					</p>
+					<p>
+						For reason of not working, no further description is provided. See
+						the headings below on the examples and code examples to see what
+						they are reaching for.
+					</p>
+					<div id="code-example">
+						<p class="tw-text-red-600">
+							This element will be replaced by any element iff a root element of
+							id <span class="ow-code">usage-example</span> exists and having an
+							attribute of <span class="ow-code">for-code-example</span>. Then
+							any node having an attribute of
+							<span class="ow-code">for-code-example</span> is selected,
+							formatted and highlighted here.
+						</p>
+					</div>
+					<p class="tw-text-blueGray-400">
+						For reason of not working, only the first felx item is displayed in
+						the code examples.
+					</p>
+				</div>
+				<div
+					class="tw-box-4 tw-flex-h tw-stack-v-10 tw-center-h-byflex-my"
+					id="usage-example"
+					for-code-example
+				>
+					<h2 class="tw-text-gray-700">Spec Bug</h2>
+					<div
+						class="tw-flex-h tw-flex-wrap tw-outline-pink-400"
+						style="max-height: 12rem"
+						for-code-example
+					>
+						<div for-code-example>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+					</div>
+					<h2 class="tw-text-gray-700">
+						Workaround writing-mode, div only. Half Way.
+					</h2>
+					<div
+						class="tw-flex-h tw-flex-wrap tw-outline-pink-400"
+						style="max-height: 12rem; writing-mode: vertical-lr"
+						for-code-example
+					>
+						<div for-code-example>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+					</div>
+					<h2 class="tw-text-gray-700">
+						Workaround writing-mode, div only. Full Way. Not working.
+					</h2>
+					<div
+						class="tw-flex-h tw-flex-wrap tw-outline-pink-400"
+						style="max-height: 12rem; writing-mode: vertical-lr"
+						for-code-example
+					>
+						<div style="writing-mode: horizontal-tb" for-code-example>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div style="writing-mode: horizontal-tb">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div style="writing-mode: horizontal-tb">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+						<div style="writing-mode: horizontal-tb">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</div>
+					</div>
+					<h2 class="tw-text-gray-700">
+						Workaround writing-mode, ul-li only. Not working.
+					</h2>
+					<ul
+						class="tw-flex-v tw-flex-wrap tw-outline-pink-400"
+						style="max-height: 12rem; writing-mode: vertical-lr"
+						for-code-example
+					>
+						<li style="writing-mode: horizontal-tb" for-code-example>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</li>
+						<li style="writing-mode: horizontal-tb">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</li>
+						<li style="writing-mode: horizontal-tb">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</li>
+						<li style="writing-mode: horizontal-tb">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+							voluptates deleniti! Nam, quis nulla?
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="src/assets/js/targetnohistory.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-markup.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+		<script src="src/assets/js/codeexamplif.js"></script>
+	</body>
+</html>
